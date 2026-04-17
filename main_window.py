@@ -20,7 +20,7 @@ from widget.video_process_pipeline.video_display_widget import VideoDisplayWidge
 from widget.video_process_pipeline.video_config import VideoConfig, LayoutData, setup_logger, MessageType, EventLogData
 from widget.video_process_pipeline.background_controller import BackgroundController
 from widget.model_management_widget import TemperaryLayout
-from widget.snapshot_image_widget import SnapshotImageWidget
+from widget.snapshot_image_widget import TabSnapshotImageWidget
 
 
 
@@ -74,7 +74,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # 레이아웃 구성 목록
         self.tab_count: int = 1
-        self.prev_tab_index: int = 0
         self.tab_data: dict = {}
         self.video_player_widget_list: list[VideoPlayerWidget] = []
         self.video_config = VideoConfig()
@@ -110,7 +109,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.auto_delete_dialog=AutoDeleteSettingDialog()     
 
         # 스냅샷 이미지
-        self.snapshot_image_widget = SnapshotImageWidget()
+        self.snapshot_image_widget = TabSnapshotImageWidget()
         self.gridLayout.replaceWidget(self.label_snapshot_image_widget, self.snapshot_image_widget)
         self.label_snapshot_image_widget.deleteLater()
 
@@ -390,18 +389,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_video_player_layout_5x5.setEnabled(is_live)
         self.button_modify_layout.setEnabled(is_live)
 
-        if index == self.prev_tab_index:
-            return
-        
-        # Snapshot 탭이 아닌 경우에만 비디오 플레이어 관련 로직 실행
-        if is_live and index < len(self.video_player_widget_list):
-            # self.logger.info(f"탭이 변경됨: 이전 인덱스 {self.prev_tab_index}, 현재 인덱스 {index}")
-            video_player_widget: VideoPlayerWidget = self.video_player_widget_list[index]
-            layout_data = self.tab_data.get(index, [])
-            if not layout_data:
-                video_player_widget.play_layout(self.tab_data.get(index, []))
-        
-        self.prev_tab_index = index
     #endregion
 
     #region CCTV 관련 함수
@@ -780,7 +767,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.logger.info(event_log)
         self.ai_event_log_widget.add_event_log_to_table(event_log)
         self.ai_event_log_image_widget.add_event_log_image_to_scroll_area(event_log.image_path)
-    
+        self.snapshot_image_widget.add_event_log_image_to_scroll_area(event_log.image_path)
     @Slot(EventLogData)
     def on_event_status_changed(self, event_log: EventLogData):
         """

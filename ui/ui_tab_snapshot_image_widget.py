@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'snapshot_image_widgetpeOQYz.ui'
+## Form generated from reading UI file 'tab_snapshot_image_widgetgnBGkh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##

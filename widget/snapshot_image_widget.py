@@ -8,7 +8,7 @@ from PySide6.QtWidgets import QWidget, QApplication, QVBoxLayout, QLabel, QScrol
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt, QTimer
 
-from ui.ui_snapshot_image_widget import Ui_Widget
+from ui.ui_tab_snapshot_image_widget import Ui_Widget
 from dialog.ai_event_log_image_popup_dialog import AiEventLogImagePopupDialog
 
 class ClickableLabel(QLabel):
@@ -42,7 +42,7 @@ class ClickableLabel(QLabel):
 #             popup = AiEventLogImagePopupDialog(self.image_path)
 #             popup.exec()
 
-class SnapshotImageWidget(QWidget, Ui_Widget):
+class TabSnapshotImageWidget(QWidget, Ui_Widget):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -71,18 +71,17 @@ class SnapshotImageWidget(QWidget, Ui_Widget):
     def resizeEvent(self, event):
         super().resizeEvent(event)
         # 위젯 크기가 바뀔 때 즉시 계산하지 않고, 레이아웃이 안정될 때까지 대기 후 처리
-        self.resize_timer.start(50) 
+        self.resize_timer.start(10) 
 
     def showEvent(self, event):
         super().showEvent(event)
         # 위젯이 다시 보여질 때(사이드바 변경 등) 크기를 재계산
-        QTimer.singleShot(50, self.update_image_sizes)
+        QTimer.singleShot(10, self.update_image_sizes)
 
     def update_image_sizes(self):
         # 뷰포트 높이에서 여백과 간격을 제외한 값을 5로 나누어 한 이미지의 높이를 결정
         viewport_height = self.scroll_area_event_log_image.viewport().height()
         viewport_width = self.scroll_area_event_log_image.viewport().width()
-        print(f"viewport_height: {viewport_height}, viewport_width: {viewport_width}")
         # 뷰포트 높이가 아직 0이거나 너무 작은 경우 (초기 렌더링 전) 계산 스킵
         if viewport_height < 50 or viewport_width < 50:
             return
@@ -170,6 +169,6 @@ class SnapshotImageWidget(QWidget, Ui_Widget):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    widget = SnapshotImageWidget()
+    widget = TabSnapshotImageWidget()
     widget.show()  
     sys.exit(app.exec()) 
