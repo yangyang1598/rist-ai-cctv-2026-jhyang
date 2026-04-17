@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="layout_management" stretch="0,1">
+     <item>
+      <widget class="QTreeWidget" name="tree_widget_management_side_bar">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <column>
+        <property name="text">
+         <string/>
+        </property>
+       </column>
+       <item>
+        <property name="text">
+         <string>관리</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>CCTV</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>불안전 상황 감지</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>이벤트</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>모델 등록 및 학습</string>
+          </property>
+         </item>
+        </item>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_management_widget">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(220, 220, 220);</string>
+       </property>
+       <property name="text">
+        <string>관리 위젯</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

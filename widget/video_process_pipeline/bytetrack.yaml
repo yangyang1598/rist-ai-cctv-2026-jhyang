@@ -1,0 +1,14 @@
+# Ultralytics 🚀 AGPL-3.0 License - https://ultralytics.com/license
+
+# Default Ultralytics settings for ByteTrack tracker when using mode="track"
+# For documentation and examples see https://docs.ultralytics.com/modes/track/
+# For ByteTrack source code see https://github.com/ifzhang/ByteTrack
+
+tracker_type: bytetrack # 트래커 유형을 지정합니다. ['botsort', 'bytetrack']
+track_high_thresh: 0.25 # 추적 중 첫 번째 연관(association)에서 사용하는 임계값. 감지된 객체가 기존 추적과 얼마나 자신 있게 매칭되는지 영향을 줍니다.
+track_low_thresh: 0.1 # 추적 중 두 번째 연관에서 사용하는 임계값. 첫 번째 연관이 실패할 때 더 관대한 기준으로 사용됩니다.
+new_track_thresh: 0.25 # 	기존 추적과 매칭되지 않는 감지 객체를 새로운 추적으로 초기화할 때의 임계값. 새로운 객체가 등장했다고 판단하는 기준을 제어합니다.
+track_buffer: 3 # 추적을 잃어버린 프레임 수를 버퍼로 유지하는 값. 값이 클수록 가려짐(occlusion)에 더 강인하게 추적을 유지합니다.
+match_thresh: 0.95 # 추적 매칭을 위한 임계값. 값이 클수록 매칭이 더 관대해집니다.
+fuse_score: True # 매칭하기 전에 신뢰도 점수를 IoU 거리와 융합할지 여부를 결정합니다. 연결할 때 공간 정보와 신뢰도 정보의 균형을 맞추는 데 도움이 됩니다.
+# min_box_area: 10  # threshold for min box areas(for tracker evaluation, not used for now)

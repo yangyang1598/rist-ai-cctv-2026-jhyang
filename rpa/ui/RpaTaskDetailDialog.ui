@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RpaTaskDetailDialog</class>
+ <widget class="QDialog" name="RpaTaskDetailDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1082</width>
+    <height>856</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RPA 업무상세</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0" colspan="2">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-326</y>
+        <width>1045</width>
+        <height>1284</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="9" column="2">
+          <widget class="QPushButton" name="pushButton_email_title_default">
+           <property name="text">
+            <string>기본값</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>여러명의 수신자는 ; 기호로 구분입력 합니다. (예시: example1@mail.com;example2@mail.com)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="23" column="0">
+          <widget class="QLabel" name="label_email_body">
+           <property name="text">
+            <string>이메일 내용</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="1">
+          <widget class="QFrame" name="frame_2">
+           <property name="frameShape">
+            <enum>QFrame::Shape::NoFrame</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>발생일시(기간)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1" colspan="3">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>( 등록한 RPA업무가 실행 될 때는 실제 업무실행 시각을 기준으로 보고서 검색을 수행합니다.)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="1" rowspan="2" colspan="3">
+             <widget class="QScrollArea" name="scrollArea_2">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>120</height>
+               </size>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents_2">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>707</width>
+                 <height>118</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_12">
+                <item row="1" column="0">
+                 <spacer name="verticalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="0">
+                 <layout class="QGridLayout" name="gridLayout_event_type">
+                  <item row="0" column="2">
+                   <widget class="QCheckBox" name="checkBox_4">
+                    <property name="text">
+                     <string>CheckBox</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QCheckBox" name="checkBox_5">
+                    <property name="text">
+                     <string>가_위험유형</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0">
+                   <widget class="QCheckBox" name="checkBox_8">
+                    <property name="text">
+                     <string>CheckBox</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QCheckBox" name="checkBox_3">
+                    <property name="text">
+                     <string>CheckBox</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QCheckBox" name="checkBox_2">
+                    <property name="text">
+                     <string>나_위험유형</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QDateTimeEdit" name="dateTimeEdit_from">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="displayFormat">
+               <string>yyyy-MM-dd HH:mm:ss</string>
+              </property>
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="label_end">
+              <property name="text">
+               <string>검색 종료일시 (까지)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QLabel" name="label_type">
+              <property name="text">
+               <string>심각도</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_start">
+              <property name="text">
+               <string>검색 시작일시 (부터)</string>
+              </property>
+             </widget>
+            </item>
+            <item row="15" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>위험유형</string>
+              </property>
+             </widget>
+            </item>
+            <item row="16" column="0">
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Orientation::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="4" column="2">
+             <widget class="QDateTimeEdit" name="dateTimeEdit_to">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="displayFormat">
+               <string>yyyy-MM-dd HH:mm:ss</string>
+              </property>
+              <property name="calendarPopup">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0" colspan="4">
+             <widget class="Line" name="line_5">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="14" column="0" colspan="4">
+             <widget class="Line" name="line_6">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1" rowspan="2" colspan="2">
+             <widget class="QGroupBox" name="groupBox_2">
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_9">
+               <item row="0" column="0">
+                <layout class="QGridLayout" name="gridLayout_13">
+                 <item row="3" column="1">
+                  <spacer name="horizontalSpacer_7">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="3" column="2" colspan="2">
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <item>
+                    <spacer name="horizontalSpacer_5">
+                     <property name="orientation">
+                      <enum>Qt::Orientation::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="3" column="0">
+                  <spacer name="horizontalSpacer_8">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QRadioButton" name="radioButton_report_duration_days_30">
+                   <property name="text">
+                    <string>최근 30일</string>
+                   </property>
+                   <property name="checked">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QRadioButton" name="radioButton_report_duration_days_7">
+                   <property name="text">
+                    <string>최근 1주일</string>
+                   </property>
+                   <property name="checked">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2" colspan="2">
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_report_duration_days">
+                     <property name="text">
+                      <string>최근</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_report_duration_days">
+                     <property name="layoutDirection">
+                      <enum>Qt::LayoutDirection::LeftToRight</enum>
+                     </property>
+                     <property name="text">
+                      <string>5</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_13">
+                     <property name="text">
+                      <string>일</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="horizontalSpacer_9">
+                     <property name="orientation">
+                      <enum>Qt::Orientation::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="12" column="1" rowspan="2" colspan="2">
+             <widget class="QGroupBox" name="groupBox">
+              <property name="title">
+               <string/>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_8">
+               <item row="3" column="0">
+                <widget class="QCheckBox" name="checkBox_report_severity_danger_low">
+                 <property name="text">
+                  <string>경미</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QCheckBox" name="checkBox_report_severity_danger_lowlow">
+                 <property name="text">
+                  <string>매우경미</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="checkBox_report_severity_danger_high">
+                 <property name="text">
+                  <string>심각</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="checkBox_report_severity_danger_highhigh">
+                 <property name="text">
+                  <string>매우심각</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QCheckBox" name="checkBox_report_severity_danger_mid">
+                 <property name="text">
+                  <string>위험</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QCheckBox" name="checkBox_report_severity_good_mid">
+                 <property name="text">
+                  <string>정상</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QCheckBox" name="checkBox_report_severity_good_highhigh">
+                 <property name="text">
+                  <string>매우우수</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QCheckBox" name="checkBox_report_severity_good_high">
+                 <property name="text">
+                  <string>우수</string>
+                 </property>
+                 <property name="checked">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="3">
+             <spacer name="horizontalSpacer_6">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Policy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>100</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="QPushButton" name="pushButton_email_addressbook">
+           <property name="text">
+            <string>주소록</string>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="2">
+          <widget class="QPushButton" name="pushButton_report_search">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>보고서 검색</string>
+           </property>
+          </widget>
+         </item>
+         <item row="23" column="1">
+          <widget class="QPlainTextEdit" name="plainTextEdit_email_body">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>150</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="1">
+          <widget class="QTableWidget" name="tableWidget_report">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>200</height>
+            </size>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+           </property>
+           <row/>
+           <row/>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>발생일시</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>보고일시</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>제목</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>장소</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>위험유형</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>심각도</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>대응조치</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>사진</string>
+            </property>
+           </column>
+           <item row="0" column="0">
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+           <item row="0" column="1">
+            <property name="text">
+             <string>2025/07/01 00:00:00</string>
+            </property>
+           </item>
+           <item row="0" column="3">
+            <property name="text">
+             <string>불안전 상황감지-중장비 충돌</string>
+            </property>
+           </item>
+           <item row="0" column="4">
+            <property name="text">
+             <string>제1공장-A01 구역</string>
+            </property>
+           </item>
+           <item row="0" column="5">
+            <property name="text">
+             <string>충돌</string>
+            </property>
+           </item>
+           <item row="0" column="6">
+            <property name="text">
+             <string>매우 심각</string>
+            </property>
+           </item>
+           <item row="0" column="7">
+            <property name="text">
+             <string>방송</string>
+            </property>
+           </item>
+           <item row="0" column="8">
+            <property name="text">
+             <string>[사진]</string>
+            </property>
+           </item>
+           <item row="1" column="0">
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item row="1" column="1">
+            <property name="text">
+             <string>2025/06/01 00:00:00</string>
+            </property>
+           </item>
+           <item row="1" column="3">
+            <property name="text">
+             <string>불안전 상황감지-개구부 접근</string>
+            </property>
+           </item>
+           <item row="1" column="4">
+            <property name="text">
+             <string>제2공장-B02 구역</string>
+            </property>
+           </item>
+           <item row="1" column="5">
+            <property name="text">
+             <string>추락</string>
+            </property>
+           </item>
+           <item row="1" column="6">
+            <property name="text">
+             <string>위험</string>
+            </property>
+           </item>
+           <item row="1" column="7">
+            <property name="text">
+             <string>알람</string>
+            </property>
+           </item>
+           <item row="1" column="8">
+            <property name="text">
+             <string>[사진]</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="13" column="1">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>( 등록한 RPA업무가 실행될 때는 실제 업무실행 시각을 기준으로 보고서 검색하므로 보고서 목록은 위와 달라질 수 있습니다.)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="10" column="0" colspan="3">
+          <widget class="Line" name="line_3">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0" colspan="3">
+          <widget class="Line" name="line">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="QLineEdit" name="lineEdit_email_title">
+           <property name="text">
+            <string>정기보고</string>
+           </property>
+          </widget>
+         </item>
+         <item row="27" column="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>100</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="27" column="1">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="24" column="1">
+          <widget class="QListWidget" name="listWidget_email_attach">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>100</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::Shape::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Shadow::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="0" column="0">
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_10">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="sizeIncrement">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>이메일 발송 요일</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <layout class="QGridLayout" name="gridLayout_4">
+                <item row="0" column="2">
+                 <widget class="QCheckBox" name="checkBox_tue">
+                  <property name="text">
+                   <string>화</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="6">
+                 <widget class="QCheckBox" name="checkBox_sat">
+                  <property name="text">
+                   <string>토</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QCheckBox" name="checkBox_mon">
+                  <property name="text">
+                   <string>월</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="4">
+                 <widget class="QCheckBox" name="checkBox_thu">
+                  <property name="text">
+                   <string>목</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="7">
+                 <widget class="QCheckBox" name="checkBox_sun">
+                  <property name="text">
+                   <string>일</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="5">
+                 <widget class="QCheckBox" name="checkBox_fri">
+                  <property name="text">
+                   <string>금</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="8">
+                 <spacer name="horizontalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Orientation::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="0" column="3">
+                 <widget class="QCheckBox" name="checkBox_wed">
+                  <property name="text">
+                   <string>수</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item row="2" column="2">
+               <widget class="QTimeEdit" name="timeEdit_sendtime">
+                <property name="minimumSize">
+                 <size>
+                  <width>200</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>200</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="minimumTime">
+                 <time>
+                  <hour>2</hour>
+                  <minute>0</minute>
+                  <second>0</second>
+                 </time>
+                </property>
+                <property name="currentSection">
+                 <enum>QDateTimeEdit::Section::AmPmSection</enum>
+                </property>
+                <property name="time">
+                 <time>
+                  <hour>9</hour>
+                  <minute>0</minute>
+                  <second>0</second>
+                 </time>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>이메일 발송 시간</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="QLineEdit" name="lineEdit_email_to"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_task_name">
+           <property name="text">
+            <string>RPA 반복업무</string>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;첨부&lt;br/&gt;보고서&lt;br/&gt;설정&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="0" colspan="3">
+          <widget class="Line" name="line_2">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_email_title">
+           <property name="text">
+            <string>이메일 제목</string>
+           </property>
+          </widget>
+         </item>
+         <item row="27" column="0">
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Maximum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>80</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_email_to">
+           <property name="text">
+            <string>이메일 수신자</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>반복 일정</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit_id">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </widget>
+         </item>
+         <item row="24" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>첨부파일</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>업무 명칭</string>
+           </property>
+          </widget>
+         </item>
+         <item row="24" column="2">
+          <widget class="QPushButton" name="pushButton_email_attach">
+           <property name="text">
+            <string>첨부파일 선택</string>
+           </property>
+          </widget>
+         </item>
+         <item row="23" column="2">
+          <widget class="QPushButton" name="pushButton_email_body_default">
+           <property name="text">
+            <string>기본값</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="3">
+          <widget class="Line" name="line_4">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="0" column="4">
+      <widget class="QPushButton" name="pushButton_accept">
+       <property name="text">
+        <string>적용</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton_insert">
+       <property name="text">
+        <string>현재 업무를 새 RPA업무로 등록</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <spacer name="horizontalSpacer_10">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Policy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="pushButton_delete">
+       <property name="text">
+        <string>현재 업무 삭제</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="pushButton_close">
+       <property name="text">
+        <string>닫기</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label_dialog_title">
+     <property name="text">
+      <string>새 업무등록</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_id</tabstop>
+  <tabstop>lineEdit_task_name</tabstop>
+  <tabstop>checkBox_mon</tabstop>
+  <tabstop>checkBox_tue</tabstop>
+  <tabstop>checkBox_wed</tabstop>
+  <tabstop>checkBox_thu</tabstop>
+  <tabstop>checkBox_fri</tabstop>
+  <tabstop>checkBox_sat</tabstop>
+  <tabstop>checkBox_sun</tabstop>
+  <tabstop>timeEdit_sendtime</tabstop>
+  <tabstop>radioButton_report_duration_days_30</tabstop>
+  <tabstop>radioButton_report_duration_days_7</tabstop>
+  <tabstop>radioButton_report_duration_days</tabstop>
+  <tabstop>dateTimeEdit_from</tabstop>
+  <tabstop>dateTimeEdit_to</tabstop>
+  <tabstop>checkBox_5</tabstop>
+  <tabstop>checkBox_2</tabstop>
+  <tabstop>checkBox_4</tabstop>
+  <tabstop>checkBox_3</tabstop>
+  <tabstop>checkBox_8</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>tableWidget_report</tabstop>
+  <tabstop>listWidget_email_attach</tabstop>
+  <tabstop>pushButton_report_search</tabstop>
+  <tabstop>pushButton_email_attach</tabstop>
+  <tabstop>scrollArea</tabstop>
+  <tabstop>pushButton_insert</tabstop>
+  <tabstop>plainTextEdit_email_body</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

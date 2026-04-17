@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>874</width>
+    <height>116</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0" colspan="2">
+    <widget class="QTableWidget" name="table_widget_ai_event_log">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::SelectionMode::SingleSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectionBehavior::SelectItems</enum>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderDefaultSectionSize">
+      <number>140</number>
+     </attribute>
+     <attribute name="horizontalHeaderHighlightSections">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderStretchLastSection">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderVisible">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="verticalHeaderDefaultSectionSize">
+      <number>25</number>
+     </attribute>
+     <row/>
+     <row/>
+     <row/>
+     <column>
+      <property name="text">
+       <string>알람발생일시</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>발생 위치</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>발생 CCTV</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>발생 이벤트</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>발생 위험 유형</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>이미지</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>true</bold>
+       </font>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>2025/05/01 23:59:59</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>1공장</string>
+      </property>
+     </item>
+     <item row="0" column="2">
+      <property name="text">
+       <string>CCTV 01</string>
+      </property>
+     </item>
+     <item row="0" column="3">
+      <property name="text">
+       <string>사람 감지</string>
+      </property>
+     </item>
+     <item row="0" column="5">
+      <property name="text">
+       <string>[ 이미지 경로 ]</string>
+      </property>
+      <property name="font">
+       <font>
+        <bold>false</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>2025/05/02 23:59:59</string>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>5공장</string>
+      </property>
+     </item>
+     <item row="1" column="2">
+      <property name="text">
+       <string>CCTV 48</string>
+      </property>
+     </item>
+     <item row="1" column="3">
+      <property name="text">
+       <string>지게차 감지</string>
+      </property>
+     </item>
+     <item row="1" column="5">
+      <property name="text">
+       <string>[ 이미지 경로 ]</string>
+      </property>
+      <property name="font">
+       <font>
+        <underline>true</underline>
+       </font>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>2025/05/03 23:59:59</string>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>2공장</string>
+      </property>
+     </item>
+     <item row="2" column="2">
+      <property name="text">
+       <string>CCTV 13</string>
+      </property>
+     </item>
+     <item row="2" column="3">
+      <property name="text">
+       <string>중량물 감지</string>
+      </property>
+     </item>
+     <item row="2" column="5">
+      <property name="text">
+       <string>[ 이미지 경로 ]</string>
+      </property>
+      <property name="font">
+       <font>
+        <underline>true</underline>
+       </font>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

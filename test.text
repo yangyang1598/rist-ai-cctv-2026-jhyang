@@ -1,0 +1,32 @@
+
+
+
+
+platform: "tensorrt_plan"
+max_batch_size: 1
+input [
+    {
+        name: "images"
+        data_type: TYPE_FP16
+        dims: [3, 640, 640]
+    }
+]
+output [
+    {
+        name: "output0"
+        data_type: TYPE_FP16
+        dims: [-1, -1]
+    }
+]
+instance_group [
+    {
+        count: 1
+        kind: KIND_GPU
+        gpus: 0
+    }
+]
+
+ 
+테스트 명령어
+
+/usr/src/tensorrt/bin/trtexec --onnx=/home/rist/rist-ai-cctv-2025-2nd/yolo11x.onnx --saveEngine=/home/rist/rist-ai-cctv-2025-2nd/yolo11x.plan --device=0 --inputIOFormats=fp16:chw --outputIOFormats=fp16:chw --fp16 --minShapes=images:1x3x640x640 --optShapes=images:1x3x640x640 --maxShapes=images:1x3x640x640

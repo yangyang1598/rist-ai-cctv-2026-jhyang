@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RpaTaskWidget</class>
+ <widget class="QWidget" name="RpaTaskWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1063</width>
+    <height>633</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;Arial&quot;;</string>
+       </property>
+       <property name="text">
+        <string>RPA 업무 관리</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>RPA 업무 변경 후 Scheduler 재시작</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_task_scheduler_restart">
+       <property name="text">
+        <string>RPA Scheduler 재시작</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_task_new">
+      <attribute name="title">
+       <string>새 업무</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="pushButton_task_new">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>새 업무 만들기</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_task_list">
+      <attribute name="title">
+       <string>업무 목록</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="0">
+          <widget class="QTableWidget" name="tableWidget_task">
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+           </property>
+           <attribute name="horizontalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderCascadingSectionResizes">
+            <bool>false</bool>
+           </attribute>
+           <row>
+            <property name="text">
+             <string>새 열</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>새 열</string>
+            </property>
+           </row>
+           <row>
+            <property name="text">
+             <string>새 열</string>
+            </property>
+           </row>
+           <column>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>업무명칭</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>실행 요일</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>실행 시간</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>보고서-이벤트 발생기간(day)</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>보고서-심각도</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>보고서-위험유형</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>이메일 수신자</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>이메일 제목</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="pushButton_search">
+           <property name="text">
+            <string>RPA 업무 검색</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
