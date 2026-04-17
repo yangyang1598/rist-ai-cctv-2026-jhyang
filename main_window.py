@@ -20,7 +20,7 @@ from widget.video_process_pipeline.video_display_widget import VideoDisplayWidge
 from widget.video_process_pipeline.video_config import VideoConfig, LayoutData, setup_logger, MessageType, EventLogData
 from widget.video_process_pipeline.background_controller import BackgroundController
 from widget.model_management_widget import TemperaryLayout
-from widget.snapshot_image_widget import TabSnapshotImageWidget
+from widget.tab_snapshot_image_widget import TabSnapshotImageWidget
 
 
 
@@ -109,8 +109,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.auto_delete_dialog=AutoDeleteSettingDialog()     
 
         # 스냅샷 이미지
-        self.snapshot_image_widget = TabSnapshotImageWidget()
-        self.gridLayout.replaceWidget(self.label_snapshot_image_widget, self.snapshot_image_widget)
+        self.tab_snapshot_image_widget = TabSnapshotImageWidget()
+        self.gridLayout.replaceWidget(self.label_snapshot_image_widget, self.tab_snapshot_image_widget)
         self.label_snapshot_image_widget.deleteLater()
 
         # 사이드바 감추기
@@ -136,6 +136,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_video_player_layout_3x3.clicked.connect(lambda: self.create_current_tab_grid(3))
         self.button_video_player_layout_4x4.clicked.connect(lambda: self.create_current_tab_grid(4))
         self.button_video_player_layout_5x5.clicked.connect(lambda: self.create_current_tab_grid(5))
+        self.check_activate_grid.toggled.connect(self.on_check_activate_grid_toggled)
 
         # 레이아웃 구성 목록
         self.video_layout_widget.grid_data.connect(self.get_layout_data_and_play_all_cctv_stream_in_layout_data)
@@ -388,6 +389,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_video_player_layout_4x4.setEnabled(is_live)
         self.button_video_player_layout_5x5.setEnabled(is_live)
         self.button_modify_layout.setEnabled(is_live)
+
+    @Slot(bool)
+    def on_check_activate_grid_toggled(self, checked: bool):
+        current_tab_index = self.tab_widget_video_player.currentIndex()
+        if current_tab_index < 0 or current_tab_index >= len(self.video_player_widget_list):
+            return
+        self.video_player_widget_list[current_tab_index].set_video_grid_overlay(checked)
 
     #endregion
 
@@ -767,7 +775,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.logger.info(event_log)
         self.ai_event_log_widget.add_event_log_to_table(event_log)
         self.ai_event_log_image_widget.add_event_log_image_to_scroll_area(event_log.image_path)
-        self.snapshot_image_widget.add_event_log_image_to_scroll_area(event_log.image_path)
+        self.tab_snapshot_image_widget.add_event_log_image_to_scroll_area(event_log.image_path)
     @Slot(EventLogData)
     def on_event_status_changed(self, event_log: EventLogData):
         """
