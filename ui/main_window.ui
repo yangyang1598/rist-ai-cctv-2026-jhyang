@@ -459,7 +459,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QCheckBox" name="check_activate_grid">
+           <widget class="QCheckBox" name="checkBox_activate_grid">
             <property name="text">
              <string>격자 표시</string>
             </property>

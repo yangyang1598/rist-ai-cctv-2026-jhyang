@@ -130,11 +130,6 @@ class VideoPlayerWidget(QWidget):
         if self.main_window and hasattr(self.main_window, 'background_controller'):
             self.main_window.background_controller.connect()
 
-    def set_video_grid_overlay(self, enabled: bool):
-        for widget in self.video_widgets.values():
-            if isinstance(widget, VideoDisplayWidget):
-                widget.set_grid_overlay_enabled(enabled)
-
     def calculate_empty_cell(self):
         for row in range(self.grid_row):
             for col in range(self.grid_col):
@@ -295,11 +290,6 @@ class VideoPlayerWidget(QWidget):
         # VideoDisplayWidget 생성 (그리드 인덱스를 video_number로 사용)
         video_widget = VideoDisplayWidget(display_video_number, cctv_info)
         video_widget.setMinimumSize(100, 100)
-        if self.main_window and hasattr(self.main_window, "check_activate_grid"):
-            try:
-                video_widget.set_grid_overlay_enabled(bool(self.main_window.check_activate_grid.isChecked()))
-            except Exception:
-                pass
         if is_visualize:
             video_widget.setStyleSheet("background-color: #FFF; border: 1px solid #555;")
         else:

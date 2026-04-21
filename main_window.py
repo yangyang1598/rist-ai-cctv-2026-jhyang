@@ -136,7 +136,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_video_player_layout_3x3.clicked.connect(lambda: self.create_current_tab_grid(3))
         self.button_video_player_layout_4x4.clicked.connect(lambda: self.create_current_tab_grid(4))
         self.button_video_player_layout_5x5.clicked.connect(lambda: self.create_current_tab_grid(5))
-        self.check_activate_grid.toggled.connect(self.on_check_activate_grid_toggled)
+        self.checkBox_activate_grid.toggled.connect(self.on_check_activate_grid_toggled)
 
         # 레이아웃 구성 목록
         self.video_layout_widget.grid_data.connect(self.get_layout_data_and_play_all_cctv_stream_in_layout_data)
@@ -382,7 +382,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         is_live = tab_text != "Snapshot"
 
         # "Snapshot" 탭이면 비활성화, 그 외(Live 등)는 활성화
-        self.check_activate_grid.setEnabled(is_live)
+        self.checkBox_activate_grid.setEnabled(is_live)
         self.button_video_player_layout_1x1.setEnabled(is_live)
         self.button_video_player_layout_2x2.setEnabled(is_live)
         self.button_video_player_layout_3x3.setEnabled(is_live)
@@ -392,10 +392,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     @Slot(bool)
     def on_check_activate_grid_toggled(self, checked: bool):
-        current_tab_index = self.tab_widget_video_player.currentIndex()
-        if current_tab_index < 0 or current_tab_index >= len(self.video_player_widget_list):
-            return
-        self.video_player_widget_list[current_tab_index].set_video_grid_overlay(checked)
+        #추후 구현 예정, displaywidget으로 checked 상태 전송 예정
+        pass
 
     #endregion
 

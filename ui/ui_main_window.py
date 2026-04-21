@@ -255,10 +255,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9.addWidget(self.button_show_sidebar)
 
-        self.check_activate_grid = QCheckBox(self.centralwidget)
-        self.check_activate_grid.setObjectName(u"check_activate_grid")
+        self.checkBox_activate_grid = QCheckBox(self.centralwidget)
+        self.checkBox_activate_grid.setObjectName(u"checkBox_activate_grid")
 
-        self.horizontalLayout_9.addWidget(self.check_activate_grid)
+        self.horizontalLayout_9.addWidget(self.checkBox_activate_grid)
 
         self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -421,7 +421,7 @@ class Ui_MainWindow(object):
         self.button_add_tab.setText(QCoreApplication.translate("MainWindow", u"+", None))
         self.button_remove_tab.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.button_show_sidebar.setText(QCoreApplication.translate("MainWindow", u"<", None))
-        self.check_activate_grid.setText(QCoreApplication.translate("MainWindow", u"\uaca9\uc790 \ud45c\uc2dc", None))
+        self.checkBox_activate_grid.setText(QCoreApplication.translate("MainWindow", u"\uaca9\uc790 \ud45c\uc2dc", None))
         self.button_modify_layout.setText(QCoreApplication.translate("MainWindow", u"\ub808\uc774\uc544\uc6c3 \uc218\uc815", None))
         self.button_delete_selected_layout.setText(QCoreApplication.translate("MainWindow", u"\uc120\ud0dd \uadf8\ub9ac\ub4dc \uc0ad\uc81c", None))
         self.label_snapshot_image_widget.setText(QCoreApplication.translate("MainWindow", u"snapshot \uc774\ubbf8\uc9c0 \uadf8\ub9ac\ub4dc", None))
