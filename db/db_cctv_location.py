@@ -39,7 +39,7 @@ class DbCctvLocation():
             sql = f"UPDATE {self.TABLE_NAME} SET {', '.join(set_clauses)}"
             if conditions:
                 sql += " WHERE " + " AND ".join(conditions)
-            db.execute(sql, params)
+            db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"update error: {e}")
             return None
@@ -50,18 +50,15 @@ class DbCctvLocation():
         db = DBManager()
         sql= f"DELETE FROM {self.TABLE_NAME} WHERE camera_location=%s;"
         params = (camera_location,)
-        return db.execute(sql, params)
+        return db.query(sql, params,fetch_type='none')
 
     def insert(self):
         # 기본적으로 skip_frame 값을 None으로 설정
         db = DBManager()
         try: 
-            
             sql = f"INSERT INTO {self.TABLE_NAME}(camera_location) VALUES (%s)"
-            params = (
-                self.camera_location
-            )
-            return db.execute(sql, params)
+            params = (self.camera_location,)
+            return db.query(sql,params,fetch_type='none')
         except Exception as e:
             print(f"insert error: {e}")
             return None
@@ -84,7 +81,7 @@ class DbCctvLocation():
                 sql += " WHERE " + " AND ".join(conditions)
 
            
-            rows = db.fetch_all(sql, params)
+            rows = db.query(sql, params, fetch_type='all')
 
             cl_list = []
             for r in rows:

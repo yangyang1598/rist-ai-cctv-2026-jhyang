@@ -34,7 +34,7 @@ class DbModelList:
                 model_name,
                 model_registered_at
             )
-            return db.execute(sql, params)
+            return db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"insert error: {e}")
             return None
@@ -84,7 +84,7 @@ class DbModelList:
             else:
                 raise ValueError("No conditions provided for update")
 
-            return db.execute(sql, params)
+            return db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"update error: {e}")
             return None
@@ -113,7 +113,7 @@ class DbModelList:
                 sql += " LIMIT %s"
                 params.append(limit)
 
-            rows = db.fetch_all(sql, params)
+            rows = db.query(sql, params, fetch_type='all')
             m_list = []
 
             for r in rows:
@@ -154,7 +154,7 @@ class DbModelList:
                 raise ValueError("No conditions provided for delete")
                 
             sql = f"DELETE FROM {self.TABLE_NAME} WHERE " + " AND ".join(conditions)
-            return db.execute(sql, params, return_rowcount=True)
+            return db.query(sql, params,fetch_type='none', return_rowcount=True)
         except Exception as e:
             print(f"delete error: {e}")
             return None

@@ -3,13 +3,14 @@ from db.db_manager import DBManager
 def get_cctv_list(fields: str='*'):
     sql = f"SELECT {fields} FROM camera_list ORDER BY camera_name, camera_location"
     db = DBManager()
-    return db.fetch_all(sql)
+    return db.query(sql, fetch_type='all')
 
 
 def delete_cctv_by_name(name):
     sql = "DELETE FROM camera_list WHERE camera_name = %s"
+    params = (name,)
     db = DBManager()
-    return db.execute(sql, name, return_rowcount=True)
+    return db.query(sql, params, fetch_type='none',return_rowcount=True)
 
 class DbCctvList:
     TABLE_NAME = 'camera_list'
@@ -45,7 +46,7 @@ class DbCctvList:
                 self.stream_path,
                 self.skip_frame
             )
-            return db.execute(sql, params)
+            return db.query(sql, params, fetch_type='none')
         except Exception as e:
             print(f"insert error: {e}")
             return None
@@ -115,7 +116,7 @@ class DbCctvList:
                 sql += " LIMIT %s"
                 params.append(limit)
                 
-            return db.execute(sql, params, return_rowcount=True)
+            return db.query(sql, params, fetch_type='none',return_rowcount=True)
         except Exception as e:
             print(f"update error: {e}")
             return None
@@ -151,7 +152,7 @@ class DbCctvList:
                 sql += " LIMIT %s"
                 params.append(limit)
 
-            rows = db.fetch_all(sql, params)
+            rows = db.query(sql, params, fetch_type='all')
             cctv_list = []
 
             if rows:
@@ -180,7 +181,7 @@ class DbCctvList:
         db = DBManager()
         try:
             sql = f"DELETE FROM {self.TABLE_NAME} WHERE camera_name = %s"
-            return db.execute(sql, (camera_name,), return_rowcount=True)
+            return db.query(sql, (camera_name,), fetch_type='none',return_rowcount=True)
         except Exception as e:
             print(f"delete error: {e}")
             return None
@@ -217,7 +218,7 @@ class DbCctvList:
             print(f"Parameters: {params}")
             
             # 쿼리 실행
-            db.execute(sql, params)
+            db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"update_logic_in_db error: {e}")
             return None

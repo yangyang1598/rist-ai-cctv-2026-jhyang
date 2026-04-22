@@ -69,12 +69,29 @@ class RpaReportDetailDialog(QDialog, Ui_RpaReportDetailDialog):
         
     def update_all_status(self):
         self.lineEdit_id.setText(str(self.id))
-        self.dateTimeEdit_event_time.setDateTime(self.event_time)
-        self.dateTimeEdit_report_time.setDateTime(self.report_time)
-        self.lineEdit_title.setText(self.title)
-        self.lineEdit_location.setText(self.location)
-        self.plainTextEdit_action.setPlainText(self.action)
-        self.lineEdit_image_path.setText(self.image_path)
+        
+        # event_time 문자열을 QDateTime으로 변환 (기존 QDateTime 객체인 경우 그대로 사용)
+        if isinstance(self.event_time, str):
+            dt_event = QDateTime.fromString(self.event_time, "yyyy-MM-dd HH:mm:ss")
+            if not dt_event.isValid():
+                dt_event = QDateTime.fromString(self.event_time, "yyyy-MM-ddTHH:mm:ss") # ISO format fallback
+            self.dateTimeEdit_event_time.setDateTime(dt_event)
+        elif self.event_time is not None:
+            self.dateTimeEdit_event_time.setDateTime(self.event_time)
+
+        # report_time 문자열을 QDateTime으로 변환
+        if isinstance(self.report_time, str):
+            dt_report = QDateTime.fromString(self.report_time, "yyyy-MM-dd HH:mm:ss")
+            if not dt_report.isValid():
+                dt_report = QDateTime.fromString(self.report_time, "yyyy-MM-ddTHH:mm:ss")
+            self.dateTimeEdit_report_time.setDateTime(dt_report)
+        elif self.report_time is not None:
+            self.dateTimeEdit_report_time.setDateTime(self.report_time)
+
+        self.lineEdit_title.setText(self.title if self.title else "")
+        self.lineEdit_location.setText(self.location if self.location else "")
+        self.plainTextEdit_action.setPlainText(self.action if self.action else "")
+        self.lineEdit_image_path.setText(self.image_path if self.image_path else "")
 
         # 위험유형 체크박스 상태 설정 
         # 문자열을 리스트로 변환 (공백 제거) (예: "화재,지게차 접근,작업자 낙상")

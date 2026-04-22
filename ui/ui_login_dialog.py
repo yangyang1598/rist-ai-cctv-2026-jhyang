@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'login_dialogSEIiHq.ui'
+## Form generated from reading UI file 'login_dialogroJqbC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##
@@ -68,7 +68,9 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.lineEdit_id.setPlaceholderText(QCoreApplication.translate("Dialog", u"ID", None))
         self.button_login.setText(QCoreApplication.translate("Dialog", u"\ub85c\uadf8\uc778", None))
+        self.lineEdit_pw.setPlaceholderText(QCoreApplication.translate("Dialog", u"password", None))
         self.checkBox_save_id_info.setText(QCoreApplication.translate("Dialog", u"ID \uc800\uc7a5", None))
         self.checkBox_auto_login.setText(QCoreApplication.translate("Dialog", u"\uc790\ub3d9 \ub85c\uadf8\uc778", None))
         self.label_title_login.setText(QCoreApplication.translate("Dialog", u"  \uc9c0\ub2a5\ud615 CCTV \ud50c\ub7ab\ud3fc  ", None))

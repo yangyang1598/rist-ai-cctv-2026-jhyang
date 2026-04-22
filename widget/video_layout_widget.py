@@ -6,6 +6,7 @@ import db.db_video_layout as db_video_layout
 
 from PySide6.QtWidgets import QWidget, QApplication, QListWidget, QListWidgetItem, QInputDialog, QMessageBox, QLayoutItem
 from PySide6.QtCore import Qt, Slot, Signal
+from PySide6.QtGui import QIcon
 from ui.ui_video_layout_widget import Ui_Widget
 from widget.video_process_pipeline.video_player_widget import VideoPlayerWidget
 from widget.video_process_pipeline.video_config import VideoConfig, LayoutData, setup_logger
@@ -18,6 +19,13 @@ class VideoLayoutWidget(QWidget, Ui_Widget):
         super().__init__()
         self.logger = setup_logger("VideoLayoutWidget")
         self.setupUi(self)
+        
+        # 버튼 아이콘 경로를 절대 경로로 재설정
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.button_add_video_layout.setIcon(QIcon(os.path.join(base_dir, 'src', 'icon', 'video_layout_add.svg')))
+        self.button_edit_video_layout.setIcon(QIcon(os.path.join(base_dir, 'src', 'icon', 'video_layout_edit.svg')))
+        self.button_delete_video_layout.setIcon(QIcon(os.path.join(base_dir, 'src', 'icon', 'video_layout_delete.svg')))
+        
         self.video_player_widget: VideoPlayerWidget = video_player_widget
         self.current_layout_data: LayoutData = LayoutData()
         if self.video_player_widget:

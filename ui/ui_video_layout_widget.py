@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'video_layout_widgetEXqnjR.ui'
+## Form generated from reading UI file 'video_layout_widgetlnfduJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##
@@ -42,24 +42,6 @@ class Ui_Widget(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer)
 
-        self.button_add_video_layout = QPushButton(Widget)
-        self.button_add_video_layout.setObjectName(u"button_add_video_layout")
-        self.button_add_video_layout.setMinimumSize(QSize(0, 0))
-        self.button_add_video_layout.setMaximumSize(QSize(30, 30))
-        self.button_add_video_layout.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
-        self.button_add_video_layout.setToolTipDuration(-1)
-
-        self.horizontalLayout.addWidget(self.button_add_video_layout)
-
-        self.button_delete_video_layout = QPushButton(Widget)
-        self.button_delete_video_layout.setObjectName(u"button_delete_video_layout")
-        self.button_delete_video_layout.setMinimumSize(QSize(0, 0))
-        self.button_delete_video_layout.setMaximumSize(QSize(30, 30))
-        self.button_delete_video_layout.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
-        self.button_delete_video_layout.setToolTipDuration(-1)
-
-        self.horizontalLayout.addWidget(self.button_delete_video_layout)
-
 
         self.verticalLayout.addLayout(self.horizontalLayout)
 
@@ -74,6 +56,51 @@ class Ui_Widget(object):
         self.list_widget_video_layout.setSpacing(0)
 
         self.verticalLayout_2.addWidget(self.list_widget_video_layout)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.button_add_video_layout = QPushButton(Widget)
+        self.button_add_video_layout.setObjectName(u"button_add_video_layout")
+        self.button_add_video_layout.setMinimumSize(QSize(0, 0))
+        self.button_add_video_layout.setMaximumSize(QSize(30, 30))
+        self.button_add_video_layout.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
+        self.button_add_video_layout.setToolTipDuration(-1)
+        icon = QIcon()
+        icon.addFile(u"../src/icon/video_layout_add.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.button_add_video_layout.setIcon(icon)
+        self.button_add_video_layout.setIconSize(QSize(40, 40))
+
+        self.horizontalLayout_2.addWidget(self.button_add_video_layout)
+
+        self.button_edit_video_layout = QPushButton(Widget)
+        self.button_edit_video_layout.setObjectName(u"button_edit_video_layout")
+        self.button_edit_video_layout.setMaximumSize(QSize(30, 30))
+        icon1 = QIcon()
+        icon1.addFile(u"../src/icon/video_layout_edit.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.button_edit_video_layout.setIcon(icon1)
+        self.button_edit_video_layout.setIconSize(QSize(30, 30))
+
+        self.horizontalLayout_2.addWidget(self.button_edit_video_layout)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+
+        self.button_delete_video_layout = QPushButton(Widget)
+        self.button_delete_video_layout.setObjectName(u"button_delete_video_layout")
+        self.button_delete_video_layout.setMinimumSize(QSize(0, 0))
+        self.button_delete_video_layout.setMaximumSize(QSize(30, 30))
+        self.button_delete_video_layout.setFocusPolicy(Qt.FocusPolicy.WheelFocus)
+        self.button_delete_video_layout.setToolTipDuration(-1)
+        icon2 = QIcon()
+        icon2.addFile(u"../src/icon/video_layout_delete.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.button_delete_video_layout.setIcon(icon2)
+        self.button_delete_video_layout.setIconSize(QSize(20, 20))
+
+        self.horizontalLayout_2.addWidget(self.button_delete_video_layout)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
 
 
         self.verticalLayout.addLayout(self.verticalLayout_2)
@@ -90,8 +117,6 @@ class Ui_Widget(object):
     def retranslateUi(self, Widget):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Form", None))
         self.label_video_layout.setText(QCoreApplication.translate("Widget", u"\u25bc \uc601\uc0c1 \ub808\uc774\uc544\uc6c3 \uad6c\uc131 \ubaa9\ub85d", None))
-        self.button_add_video_layout.setText(QCoreApplication.translate("Widget", u"+", None))
-        self.button_delete_video_layout.setText(QCoreApplication.translate("Widget", u"-", None))
 
         __sortingEnabled = self.list_widget_video_layout.isSortingEnabled()
         self.list_widget_video_layout.setSortingEnabled(False)

@@ -173,9 +173,11 @@ class AiEventLogPagingWidget(QWidget, Ui_Widget):
             item_check.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled )
             item_check.setCheckState(Qt.Unchecked)
             item_check.setData(Qt.UserRole, log['image'])
+            
+            date_obj = datetime.fromisoformat(str(log['date']))
 
             table_widget.setItem(row, 0, item_check)
-            table_widget.setItem(row, 1, QTableWidgetItem(log['date'].strftime('%Y-%m-%d %H:%M:%S')))
+            table_widget.setItem(row, 1, QTableWidgetItem(date_obj.strftime('%Y-%m-%d %H:%M:%S')))
             table_widget.setItem(row, 2, QTableWidgetItem(log['cctv_location']))
             table_widget.setItem(row, 3, QTableWidgetItem(log['cctv_id']))
             table_widget.setItem(row, 4, QTableWidgetItem(log['content']))

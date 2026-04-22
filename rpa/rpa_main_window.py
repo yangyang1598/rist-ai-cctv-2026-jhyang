@@ -238,8 +238,11 @@ class RpaMainWindow(QMainWindow, Ui_RpaMainWindow):
         """
 
         for row_idx, report in enumerate(report_list):
-            event_time = report.event_time.strftime('%Y-%m-%d %H:%M:%S') if report.event_time else 'N/A'
-            report_time = report.report_time.strftime('%Y-%m-%d %H:%M:%S') if report.report_time else 'N/A'
+            report_event_time = datetime.fromisoformat(str(report.event_time))
+            report_report_time = datetime.fromisoformat(str(report.report_time))
+
+            event_time = report_event_time.strftime('%Y-%m-%d %H:%M:%S') if report_event_time else 'N/A'
+            report_time = report_report_time.strftime('%Y-%m-%d %H:%M:%S') if report_report_time else 'N/A'
             severity = helper.severity_to_label(report.severity)
             image_cell = report.image_path if report.image_path else '이미지 없음'
 

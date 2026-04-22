@@ -6,6 +6,7 @@ from rpa.db.db_rpa_report import RpaReport
 from PySide6.QtWidgets import *
 from PySide6.QtCore import QFile, QIODevice, QDateTime, QTimeZone, QSize, QTime, Signal
 from PySide6.QtGui import *
+from datetime import datetime
 
 from rpa.ui.ui_RpaTaskDetailDialog import Ui_RpaTaskDetailDialog
 from rpa import rpa_helper as helper
@@ -194,9 +195,11 @@ class RpaTaskDetailDialog (QDialog, Ui_RpaTaskDetailDialog):
 
         for row_idx, report in enumerate(reports):
             # 각 열에 맞게 값 설정
+            report_event_time = datetime.fromisoformat(str(report.event_time))
+            report_report_time = datetime.fromisoformat(str(report.report_time))
             self.tableWidget_report.setItem(row_idx, 0, QTableWidgetItem(str(report.id)))
-            self.tableWidget_report.setItem(row_idx, 1, QTableWidgetItem(report.event_time.strftime("%Y-%m-%d %H:%M:%S") if report.event_time else ""))
-            self.tableWidget_report.setItem(row_idx, 2, QTableWidgetItem(report.report_time.strftime("%Y-%m-%d %H:%M:%S") if report.report_time else ""))
+            self.tableWidget_report.setItem(row_idx, 1, QTableWidgetItem(report_event_time.strftime("%Y-%m-%d %H:%M:%S") if report_event_time else ""))
+            self.tableWidget_report.setItem(row_idx, 2, QTableWidgetItem(report_report_time.strftime("%Y-%m-%d %H:%M:%S") if report_report_time else ""))
             self.tableWidget_report.setItem(row_idx, 3, QTableWidgetItem(report.title))
             self.tableWidget_report.setItem(row_idx, 4, QTableWidgetItem(report.location))
             self.tableWidget_report.setItem(row_idx, 5, QTableWidgetItem(report.event_type))

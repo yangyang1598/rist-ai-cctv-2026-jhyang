@@ -54,7 +54,7 @@ class DbCctvSetting():
             
             sql = f"UPDATE {self.TABLE_NAME} SET {', '.join(set_clauses)} WHERE {' AND '.join(conditions)}"
             
-            db.execute(sql, params)
+            db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"update error: {e}")
             return None
@@ -63,7 +63,7 @@ class DbCctvSetting():
         db = DBManager()
         sql= f"DELETE FROM {self.TABLE_NAME} WHERE camera_name=%s;"
         params = (camera_name,)
-        return db.execute(sql, params)
+        return db.query(sql, params,fetch_type='none')
 
     def insert(self):
         # 기본적으로 skip_frame 값을 None으로 설정
@@ -78,7 +78,7 @@ class DbCctvSetting():
                 self.fps_limit,
                 self.unsafe_event
             )
-            return db.execute(sql, params)
+            return db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"insert error: {e}")
             return None
@@ -106,7 +106,7 @@ class DbCctvSetting():
             if limit is not None:
                 sql += f" LIMIT {limit}"
                 
-            rows = db.fetch_all(sql, params)
+            rows = db.query(sql, params, fetch_type='all')
 
             cs_list = []
             for r in rows:
@@ -155,7 +155,7 @@ class DbCctvSetting():
             print(f"Parameters: {params}")
             
             # 쿼리 실행
-            db.execute(sql, params)
+            db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"update_logic_in_db error: {e}")
             return None

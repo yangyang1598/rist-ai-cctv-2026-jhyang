@@ -69,10 +69,11 @@ class AiEventLogWidget(QWidget, Ui_Widget):
 
     def load_event_logs_to_table(self, table_widget:QTableWidget):
         event_logs = db_ai_event_log.get_ai_event_logs(limit=100)
-
         table_widget.setRowCount(len(event_logs))
         for row, log in enumerate(event_logs):
-            table_widget.setItem(row, 0, QTableWidgetItem(log['date'].strftime('%Y-%m-%d %H:%M:%S')))
+            
+            date_obj = datetime.fromisoformat(str(log['date']))
+            table_widget.setItem(row, 0, QTableWidgetItem(date_obj.strftime('%Y-%m-%d %H:%M:%S')))
             table_widget.setItem(row, 1, QTableWidgetItem(log['cctv_location']))
             table_widget.setItem(row, 2, QTableWidgetItem(log['cctv_id']))
             table_widget.setItem(row, 3, QTableWidgetItem(log['content']))

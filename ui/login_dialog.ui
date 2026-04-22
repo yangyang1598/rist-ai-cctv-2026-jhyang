@@ -40,6 +40,9 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="placeholderText">
+    <string>ID</string>
+   </property>
   </widget>
   <widget class="QPushButton" name="button_login">
    <property name="geometry">
@@ -71,6 +74,9 @@ color:rgb(255,255,255);</string>
      <width>251</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="placeholderText">
+    <string>password</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBox_save_id_info">

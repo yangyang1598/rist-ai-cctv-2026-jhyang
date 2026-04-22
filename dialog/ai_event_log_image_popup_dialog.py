@@ -8,6 +8,7 @@ from PySide6.QtCore import Qt
 class AiEventLogImagePopupDialog(QDialog):
     def __init__(self, image_path):
         super().__init__()
+        self.setWindowFlags(self.windowFlags() | Qt.WindowMaximizeButtonHint)
         self.setWindowTitle(f"이미지 확인: {image_path}")
         self.resize(500, 400)
 

@@ -3,7 +3,9 @@ sys.path.append(os.path.abspath(os.curdir))
 
 # -*- coding: utf-8 -*-
 from datetime import datetime, timedelta
-from rpa.db.db_manager_rpa import RpaDBManager
+# from rpa.db.db_manager_rpa import RpaDBManager
+from db.db_manager import DBManager
+
 from rpa import rpa_helper as helper
 
 from PySide6.QtWidgets import (
@@ -27,29 +29,28 @@ class RpaTask:
         self.email_subject = ''
         self.email_body = ''
 
-    def get_dbmanager(self)-> RpaDBManager:
-        return RpaDBManager()
+    def get_dbmanager(self)-> DBManager:
+        return DBManager()
 
     def init(self):
         db = self.get_dbmanager()
-        return db.execute(self.sql_create_table())
-
+        return db.query(self.sql_create_table(), fetch_type='none')
     def insert(self):
         db = self.get_dbmanager()
-        return db.execute(self.sql_insert(), return_rowcount=True)
+        return db.query(self.sql_insert(),fetch_type='none', return_rowcount=True)
 
     def update(self, id):
         db = self.get_dbmanager()
-        return db.execute(self.sql_update(id), return_rowcount=True)
+        return db.query(self.sql_update(id),fetch_type='none', return_rowcount=True)
 
     def delete(self, id):
         db = self.get_dbmanager()
-        return db.execute(self.sql_delete(id), return_rowcount=True)
+        return db.query(self.sql_delete(id),fetch_type='none', return_rowcount=True)
 
     def select(self, id=None):
         db = self.get_dbmanager()
         sql = self.sql_select(id)
-        rows= db.fetch_all(sql)
+        rows= db.query(sql,fetch_type='all')
         task_list = []
 
         for r in rows:

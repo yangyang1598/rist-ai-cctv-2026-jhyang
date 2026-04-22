@@ -24,7 +24,7 @@ class DbLogicList:
         try:    
             sql = f"INSERT INTO {self.TABLE_NAME} (id, logic_name, skip_frame, input_img_size, logicListData, risk_level, jiguk_direction) VALUES (%s, %s,%s, %s, %s, %s,%s)"
             params = (self.id, self.logic_name, self.skip_frame, str(self.input_img_size), json.dumps(self.logicListData, ensure_ascii=False), self.risk_level, self.jiguk_direction)
-            return db.execute(sql, params)
+            return db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"insert error: {e}")
             return None
@@ -70,7 +70,7 @@ class DbLogicList:
             
             if conditions:
                 sql += " WHERE " + " AND ".join(conditions)
-            return db.execute(sql, params)
+            return db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"update error: {e}")
             return None
@@ -96,7 +96,7 @@ class DbLogicList:
                 sql += " LIMIT %s"
                 params.append(limit)
 
-            rows = db.fetch_all(sql, params)
+            rows = db.query(sql, params, fetch_type='all')
             lgl_list = []
 
             for r in rows:
@@ -137,7 +137,7 @@ class DbLogicList:
                 raise ValueError("Either logic_name or id must be provided for deletion")
             
             sql = f"DELETE FROM {self.TABLE_NAME} WHERE " + " AND ".join(conditions)
-            return db.execute(sql, params)
+            return db.query(sql, params,fetch_type='none')
         except Exception as e:
             print(f"delete error: {e}")
             return None
@@ -146,10 +146,11 @@ class DbLogicList:
 def get_event_logic_name():
     sql = "SELECT logic_name FROM logic_list"
     db = DBManager()
-    return db.fetch_all(sql)
+    return db.query(sql,fetch_type='all')
 
 def get_event_logic_by_logic_name(logic_names):
     placeholders  = ', '.join(['%s'] * len(logic_names))  # → "%s, %s, %s"
     sql = f"SELECT * FROM logic_list WHERE logic_name IN ({placeholders })"
     db = DBManager()
-    return db.fetch_all(sql, logic_names)
+    params= (logic_names)
+    return db.query(sql, params, fetch_type='all')

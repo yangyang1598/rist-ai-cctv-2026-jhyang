@@ -1,78 +1,33 @@
-import pymysql
-from pymysql.cursors import DictCursor
+import json
+import requests
 
 class DBManager:
-    def __init__(self, host='localhost', port=3306, user='rist', password='admin', db='rist', charset='utf8mb4'):
-        self.db_config = {
-            'host': host,
-            'port': port,
-            'user': user,
-            'password': password,
-            'db': db,
-            'charset': charset,
-            'cursorclass': DictCursor,
-            'autocommit': False,
+    def __init__(self, host='localhost', port=30443):
+        self.url = f"http://{host}:{port}/api/db/query"
+
+    def query(self, query, params=None, fetch_type='all',return_rowcount=False):
+        
+        payload = {
+            "query": query,
+            "params": params,
+            "fetch_type": fetch_type,
         }
+        response = requests.post(self.url, json=payload)
+        json_data = response.json()
+        # print("json_data",json_data,"\n\n\n")
 
-    def _get_connection(self):
-        return pymysql.connect(**self.db_config)
+        if json_data.get("success")==True:
+            # print("API 조회 결과:", json_data.get("data"),"\n\n\n")
+            if fetch_type=='none' :
+                if return_rowcount:
+                    return json_data.get("meta").get("affected_rows")
+                else:
+                    return json_data.get("meta").get("last_insert_id")
+            if fetch_type=='all':
+                return json_data.get("data")
+            if fetch_type=='one':
+                return json_data.get("data")
+        else:
+            raise Exception(f'----------------------- QUERY ERROR: {json_data.get("error")}')
 
-    def execute(self, sql, params=None, return_rowcount=False):
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cursor:
-                    # print(f'----------------------- EXECUTE SQL:\n{sql}')
-                    # print(f'----------------------- PARAMS:\n{params}')
-                    cursor.execute(sql, params)
-                    conn.commit()
-                    if return_rowcount:
-                        return cursor.rowcount
-                    else:
-                        return cursor.lastrowid
-        except Exception as e:
-            print(f'-- EXECUTE ERROR: {e}')
-            try:
-                conn.rollback()
-            except:
-                pass
-            raise
-
-    def execute_many(self, sql, param_list):
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cursor:
-                    # print(f'----------------------- EXECUTE MANY SQL:\n{sql}')
-                    # print(f'----------------------- PARAMS:\n{param_list}')
-                    cursor.executemany(sql, param_list)
-                    conn.commit()
-        except Exception as e:
-            print(f'----------------------- EXECUTE MANY ERROR: {e}')
-            try:
-                conn.rollback()
-            except:
-                pass
-            raise
-
-    def fetch_one(self, sql, params=None):
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cursor:
-                    # print(f'----------------------- FETCH ONE SQL:\n{sql}')
-                    # print(f'----------------------- PARAMS:\n{params}')
-                    cursor.execute(sql, params)
-                    return cursor.fetchone()
-        except Exception as e:
-            print(f'----------------------- FETCH ONE ERROR: {e}')
-            raise
-
-    def fetch_all(self, sql, params=None):
-        try:
-            with self._get_connection() as conn:
-                with conn.cursor() as cursor:
-                    # print(f'----------------------- FETCH ALL SQL:\n{sql}')
-                    # print(f'----------------------- PARAMS:\n{params}')
-                    cursor.execute(sql, params)
-                    return cursor.fetchall()
-        except Exception as e:
-            print(f'----------------------- FETCH ALL ERROR: {e}')
-            raise
+#fetch_type: all, one, none

@@ -9,7 +9,9 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import QDateTime, QTimer
 from datetime import datetime, timedelta
-from rpa.db.db_manager_rpa import RpaDBManager
+# from rpa.db.db_manager_rpa import RpaDBManager
+from db.db_manager import DBManager
+
 from rpa import rpa_helper as helper
 
 class RpaReport():
@@ -26,29 +28,29 @@ class RpaReport():
         self.action = ''
         self.image_path = ''
 
-    def get_dbmanager(self)-> RpaDBManager:
-        return RpaDBManager()
+    def get_dbmanager(self)-> DBManager:
+        return DBManager()
         
     def init(self):
         db = self.get_dbmanager()
-        return db.execute(self.sql_create_table())
+        return db.query(self.sql_create_table(), fetch_type='none')
 
     def insert(self):
         db = self.get_dbmanager()
-        return db.execute(self.sql_insert(), return_rowcount=True)
+        return db.query(self.sql_insert(), fetch_type='none',return_rowcount=True)
 
     def update(self, id):
         db = self.get_dbmanager()
-        return db.execute(self.sql_update(id), return_rowcount=True)
+        return db.query(self.sql_update(id),fetch_type='none', return_rowcount=True)
 
     def delete(self, id):
         db = self.get_dbmanager()
-        return db.execute(self.sql_delete(id), return_rowcount=True)
+        return db.query(self.sql_delete(id),fetch_type='none', return_rowcount=True)
 
     def select(self, id=None, event_date_from=None, event_date_to=None, severity=None, event_type=None, limit=None):
         db = self.get_dbmanager()
         sql = self.sql_select(id, event_date_from, event_date_to, severity, event_type, limit)
-        rows = db.fetch_all(sql)
+        rows = db.query(sql,fetch_type='all')
         report_list = []
 
         for r in rows:
@@ -71,7 +73,7 @@ class RpaReport():
     def get_distinct_event_types(self):
         db = self.get_dbmanager()
         sql = f"SELECT DISTINCT event_type FROM {self.TABLE_NAME} WHERE event_type IS NOT NULL;"
-        rows = db.fetch_all(sql)
+        rows = db.query(sql,fetch_type='all')
         return [r.get("event_type") for r in rows]
 
     def sql_insert(self):
@@ -118,7 +120,9 @@ class RpaReport():
             conditions.append(f"severity IN ({severity_list})") 
         if event_type:
             for etype in event_type:
-                conditions.append(f"event_type LIKE '%{etype}%'")
+                # % 기호가 포매팅 기호로 해석되지 않도록 %%로 이스케이프 처리
+                escaped_etype = etype.replace('%', '%%')
+                conditions.append(f"event_type LIKE '%%{escaped_etype}%%'")
 
             
 

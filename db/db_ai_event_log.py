@@ -84,10 +84,10 @@ def get_ai_event_logs(fields: str = '*', start_dt: str = None, end_dt: str =None
     )
 
     db = DBManager()
-    return db.fetch_all(sql)
+    return db.query(sql, fetch_type='all')
 
 def insert_ai_event_log(date, cctv_location, cctv_name, event, severity, image_path):
     sql = "INSERT INTO event_log_data (date, cctv_location, cctv_id, content, severity, image) VALUES (%s, %s, %s, %s,%s, %s)"
     db = DBManager()
-    return db.execute(sql, (date, cctv_location, cctv_name, event, severity,image_path))
+    return db.query(sql, (date, cctv_location, cctv_name, event, severity,image_path),fetch_type='none')
 

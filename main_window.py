@@ -117,17 +117,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.hide_side_bar()
         # self.hide_event_log()
         # self.ai_event_log_image_widget.hide()
+        
+        #기본적으로 PTZ 위젯 숨김
+        self.ptz_controller_widget.hide()
 
     def init_ui(self):
         # CCTV 목록
         self.cctv_list_widget.stream_info_selected.connect(self.on_cctv_list_stream_info_selected)
         
-        #탭 추가/삭제 버튼 숨김
-        self.button_add_tab.hide()
-        self.button_remove_tab.hide()
-        # 비디오 디스플레이 탭 추가/삭제
-        # self.button_add_tab.clicked.connect(self.on_button_add_tab_clicked)
-        # self.button_remove_tab.clicked.connect(self.on_button_remove_tab_clicked)
         self.tab_widget_video_player.currentChanged.connect(self.on_tab_changed)
 
         # 비디오 디스플레이 레이아웃
@@ -142,7 +139,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.video_layout_widget.grid_data.connect(self.get_layout_data_and_play_all_cctv_stream_in_layout_data)
 
         # 이벤트 로그 이미지 목록 토글
-        self.button_ai_event_image_log.clicked.connect(self.toggle_event_log_image_widget)
+        self.button_show_ai_event_image_log.clicked.connect(self.toggle_event_log_image_widget)
+        self.button_show_event_log.clicked.connect(self.toggle_event_log_widget)
+        self.button_show_sidebar.clicked.connect(self.toggle_side_bar_widget)
 
         # 프로그램
         self.action_system_status.triggered.connect(self.open_system_status_dialog)
@@ -172,9 +171,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_delete_selected_layout.clicked.connect(self.delete_selected_layout)
 
         # 사이드바 활성화 & 버튼 텍스트 변경(20250908 기본 UI 내 사이드바 x 구현)
-        self.button_show_sidebar.toggled.connect(self.change_side_bar_button_text)
-        self.button_show_event_log.toggled.connect(self.change_event_log_button_text)
-
+        # self.button_show_sidebar.toggled.connect(self.change_side_bar_button_text)
+        # self.button_show_event_log.toggled.connect(self.change_event_log_button_text)
+        # self.button_show_ai_event_image_log.toggled.connect(self.change_ai_event_image_log_text)
         # TODO: 2025-10-15
         # 메뉴바에 스트림 재시작 메뉴 추가
         # video_process에서 스트림 재연결 최대 횟수 초과 시 스트림 재시작 수동 기능
@@ -192,38 +191,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def load_file(self, *path_parts):
         return os.path.join(os.path.dirname(__file__), *path_parts)
 
-    def change_side_bar_button_text(self, checked: bool):
-        
-        if not checked:
-            self.button_show_sidebar.setText(">")
-            self.show_side_bar()
-        else:
-            self.button_show_sidebar.setText("<")
-            self.hide_side_bar()
-    
-    def change_event_log_button_text(self,checked:bool):
-        if not checked:
-            self.button_show_event_log.setText("v")
-            self.show_event_log()    
-        else:
-            self.button_show_event_log.setText("^")
-            self.hide_event_log()
-            
-    def hide_event_log(self):
-        self.ai_event_log_widget.hide()
-
-    def hide_side_bar(self):
-        # 왼쪽 사이드바 감춤
-        for i in range(self.layout_left.count()):
-            item = self.layout_left.itemAt(i)
-            if item:
-                if item.widget():
-                    item.widget().hide()
-                elif item.layout():
-                    # 로그인 정보 위젯들을 재귀적으로 숨김
-                    self._set_label_id_visible(item.layout(), False)
-        
-        self.hide_layout_buttons()
 
     def hide_layout_buttons(self):
         """레이아웃 관련 버튼들을 숨기기"""
@@ -234,28 +201,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_video_player_layout_4x4.setVisible(False)
         self.button_video_player_layout_5x5.setVisible(False)
         
-        # 탭 관련 버튼들
-        self.button_add_tab.setVisible(False)
-        self.button_remove_tab.setVisible(False)
-
         # 레이아웃 버튼
         self.button_modify_layout.setVisible(False)
 
-    def show_event_log(self):
-        self.ai_event_log_widget.show()
-
-    def show_side_bar(self):
-        # 왼쪽 사이드바 표시
-        for i in range(self.layout_left.count()):
-            item = self.layout_left.itemAt(i)
-            if item:
-                if item.widget():
-                    item.widget().show()
-                elif item.layout():
-                    # 로그인 정보 위젯들을 재귀적으로 표시
-                    self._set_label_id_visible(item.layout(), True)
-        
-        self.show_layout_buttons()
 
     def _set_label_id_visible(self, layout, visible):
         """로그인 정보 위젯 가시성 설정"""
@@ -275,10 +223,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.button_video_player_layout_4x4.setVisible(True)
         self.button_video_player_layout_5x5.setVisible(True)
         
-        # 탭 관련 버튼들
-        self.button_add_tab.setVisible(True)
-        self.button_remove_tab.setVisible(True)
-
         # 레이아웃 버튼
         self.button_modify_layout.setVisible(True)
 
@@ -322,22 +266,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             current_video_player_widget = self.video_player_widget_list[current_tab_index]
             current_video_player_widget.create_grid(grid_size)
         
-    # def on_button_add_tab_clicked(self):
-    #     self.set_live_tab_widget(f"탭 {self.tab_count}")
-
-    # def on_button_remove_tab_clicked(self):
-    #     index = self.tab_widget_video_player.currentIndex()
-    #     tab_name = self.tab_widget_video_player.tabText(index)
-    #     if index != -1:
-    #         self.tab_widget_video_player.removeTab(index)
-
-    #     current_tab_index = self.tab_widget_video_player.currentIndex()
-    #     if current_tab_index >= 0 and current_tab_index < len(self.video_player_widget_list):
-    #         current_video_player_widget = self.video_player_widget_list[current_tab_index]
-    #         current_video_player_widget.is_grid_creating = False
-    #         current_video_player_widget.clear_grid_widget()
-    #     self.tab_count -= 1
-    #     self.logger.info(f"{tab_name} 삭제됨")
 
     def change_layout_modify_button_text(self, checked: bool):
         """
@@ -870,9 +798,46 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def toggle_event_log_image_widget(self):
         if self.ai_event_log_image_widget.isVisible():
             self.ai_event_log_image_widget.hide()
+            self.button_show_ai_event_image_log.setText("▶")
         else:
             self.ai_event_log_image_widget.show()
+            self.button_show_ai_event_image_log.setText("◀")
 
+    def toggle_event_log_widget(self):
+        if self.ai_event_log_widget.isVisible():
+            self.ai_event_log_widget.hide()
+            self.button_show_event_log.setText("▼")
+        else:
+            self.ai_event_log_widget.show()
+            self.button_show_event_log.setText("▲")
+
+    def toggle_side_bar_widget(self,checked: bool):
+        if checked:
+            self.button_show_sidebar.setText("▶")
+            for i in range(self.layout_left.count()):
+                item = self.layout_left.itemAt(i)
+                if item:
+                    if item.widget():
+                        item.widget().hide()
+                    elif item.layout():
+                        # 로그인 정보 위젯들을 재귀적으로 숨김
+                        self._set_label_id_visible(item.layout(), False)
+        
+            self.hide_layout_buttons()
+        else:
+            self.button_show_sidebar.setText("◀")
+            for i in range(self.layout_left.count()):
+                item = self.layout_left.itemAt(i)
+                if item:
+                    if item.widget():
+                        item.widget().show()
+                    elif item.layout():
+                        # 로그인 정보 위젯들을 재귀적으로 표시
+                        self._set_label_id_visible(item.layout(), True)
+        
+            self.show_layout_buttons()
+
+    
     def open_system_status_dialog(self):
         self.system_status_dialog.show()
 
