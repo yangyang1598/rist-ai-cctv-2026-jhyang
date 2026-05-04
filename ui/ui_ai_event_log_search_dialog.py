@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'ai_event_log_search_dialoggZrYcj.ui'
+## Form generated from reading UI file 'ai_event_log_search_dialogrtGaje.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##
@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QHBoxLayout, QLabel,
-    QPushButton, QSizePolicy, QTabWidget, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QDialog, QGridLayout, QHBoxLayout,
+    QLabel, QPushButton, QSizePolicy, QSpacerItem,
+    QTabWidget, QVBoxLayout, QWidget)
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -149,6 +149,20 @@ class Ui_Dialog(object):
 
         self.layout_event_log_list.addWidget(self.label_ai_event_log_paging_widget)
 
+        self.label_ai_event_log_selected_image_widget = QLabel(self.tab)
+        self.label_ai_event_log_selected_image_widget.setObjectName(u"label_ai_event_log_selected_image_widget")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.label_ai_event_log_selected_image_widget.sizePolicy().hasHeightForWidth())
+        self.label_ai_event_log_selected_image_widget.setSizePolicy(sizePolicy1)
+        self.label_ai_event_log_selected_image_widget.setMaximumSize(QSize(713, 120))
+        self.label_ai_event_log_selected_image_widget.setFont(font1)
+        self.label_ai_event_log_selected_image_widget.setStyleSheet(u"background-color: rgb(220, 220, 220);")
+        self.label_ai_event_log_selected_image_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
+        self.layout_event_log_list.addWidget(self.label_ai_event_log_selected_image_widget)
+
 
         self.horizontalLayout_4.addLayout(self.layout_event_log_list)
 
@@ -171,19 +185,91 @@ class Ui_Dialog(object):
         self.horizontalLayout_2.addLayout(self.layout_event_log_graph)
 
         self.tab_widget_event_log.addTab(self.tab_2, "")
+        self.tab_3 = QWidget()
+        self.tab_3.setObjectName(u"tab_3")
+        self.gridLayout_2 = QGridLayout(self.tab_3)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.verticalLayout_2 = QVBoxLayout()
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.horizontalLayout_3 = QHBoxLayout()
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
+
+        self.button_external_image_transfer = QPushButton(self.tab_3)
+        self.button_external_image_transfer.setObjectName(u"button_external_image_transfer")
+
+        self.horizontalLayout_3.addWidget(self.button_external_image_transfer)
+
+
+        self.verticalLayout_2.addLayout(self.horizontalLayout_3)
+
+        self.widget = QWidget(self.tab_3)
+        self.widget.setObjectName(u"widget")
+        self.gridLayout_3 = QGridLayout(self.widget)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.label_3 = QLabel(self.widget)
+        self.label_3.setObjectName(u"label_3")
+
+        self.gridLayout.addWidget(self.label_3, 0, 2, 1, 1)
+
+        self.label_6 = QLabel(self.widget)
+        self.label_6.setObjectName(u"label_6")
+
+        self.gridLayout.addWidget(self.label_6, 1, 2, 1, 1)
+
+        self.label_5 = QLabel(self.widget)
+        self.label_5.setObjectName(u"label_5")
+
+        self.gridLayout.addWidget(self.label_5, 1, 1, 1, 1)
+
+        self.label_2 = QLabel(self.widget)
+        self.label_2.setObjectName(u"label_2")
+
+        self.gridLayout.addWidget(self.label_2, 0, 1, 1, 1)
+
+        self.label = QLabel(self.widget)
+        self.label.setObjectName(u"label")
+
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+
+        self.label_4 = QLabel(self.widget)
+        self.label_4.setObjectName(u"label_4")
+
+        self.gridLayout.addWidget(self.label_4, 1, 0, 1, 1)
+
+        self.label_7 = QLabel(self.widget)
+        self.label_7.setObjectName(u"label_7")
+
+        self.gridLayout.addWidget(self.label_7, 2, 0, 1, 1)
+
+        self.label_8 = QLabel(self.widget)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout.addWidget(self.label_8, 2, 1, 1, 1)
+
+        self.label_9 = QLabel(self.widget)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout.addWidget(self.label_9, 2, 2, 1, 1)
+
+
+        self.gridLayout_3.addLayout(self.gridLayout, 0, 0, 1, 1)
+
+
+        self.verticalLayout_2.addWidget(self.widget)
+
+        self.verticalLayout_2.setStretch(1, 10)
+
+        self.gridLayout_2.addLayout(self.verticalLayout_2, 0, 1, 1, 1)
+
+        self.tab_widget_event_log.addTab(self.tab_3, "")
 
         self.layout_event_log.addWidget(self.tab_widget_event_log)
 
-        self.label_ai_event_log_selected_image_widget = QLabel(Dialog)
-        self.label_ai_event_log_selected_image_widget.setObjectName(u"label_ai_event_log_selected_image_widget")
-        self.label_ai_event_log_selected_image_widget.setFont(font1)
-        self.label_ai_event_log_selected_image_widget.setStyleSheet(u"background-color: rgb(220, 220, 220);")
-        self.label_ai_event_log_selected_image_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.layout_event_log.addWidget(self.label_ai_event_log_selected_image_widget)
-
-        self.layout_event_log.setStretch(1, 3)
-        self.layout_event_log.setStretch(2, 1)
 
         self.layout_event_log_search.addLayout(self.layout_event_log)
 
@@ -195,7 +281,7 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
 
-        self.tab_widget_event_log.setCurrentIndex(1)
+        self.tab_widget_event_log.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(Dialog)
@@ -212,9 +298,20 @@ class Ui_Dialog(object):
         self.button_refresh.setText(QCoreApplication.translate("Dialog", u"\uc0c8\ub85c\uace0\uce68", None))
         self.button_report.setText(QCoreApplication.translate("Dialog", u"\ubcf4\uace0\uc11c \uc791\uc131", None))
         self.label_ai_event_log_paging_widget.setText(QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \ub85c\uadf8 \uc704\uc82f", None))
+        self.label_ai_event_log_selected_image_widget.setText(QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \ub85c\uadf8 \uc120\ud0dd \uc774\ubbf8\uc9c0 \uc704\uc82f", None))
         self.tab_widget_event_log.setTabText(self.tab_widget_event_log.indexOf(self.tab), QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \ub85c\uadf8", None))
         self.label_ai_event_log_graph_widget.setText(QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \ub85c\uadf8 \uadf8\ub798\ud504 \uc704\uc82f", None))
         self.tab_widget_event_log.setTabText(self.tab_widget_event_log.indexOf(self.tab_2), QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \ud1b5\uacc4", None))
-        self.label_ai_event_log_selected_image_widget.setText(QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \ub85c\uadf8 \uc120\ud0dd \uc774\ubbf8\uc9c0 \uc704\uc82f", None))
+        self.button_external_image_transfer.setText(QCoreApplication.translate("Dialog", u"\uc774\ubbf8\uc9c0 \uc678\ubd80 \uc804\uc1a1", None))
+        self.label_3.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_6.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_5.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_4.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_7.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_8.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.label_9.setText(QCoreApplication.translate("Dialog", u"image", None))
+        self.tab_widget_event_log.setTabText(self.tab_widget_event_log.indexOf(self.tab_3), QCoreApplication.translate("Dialog", u"\uc774\ubca4\ud2b8 \uc2a4\ub0c5\uc0f7", None))
     # retranslateUi
 

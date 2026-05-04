@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowsIrZIq.ui'
+## Form generated from reading UI file 'main_windowKlBwUi.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.9.0
+## Created by: Qt User Interface Compiler version 6.11.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -77,16 +77,16 @@ class Ui_MainWindow(object):
         self.label_user_name = QLabel(self.centralwidget)
         self.label_user_name.setObjectName(u"label_user_name")
         font1 = QFont()
-        font1.setPointSize(18)
+        font1.setPointSize(11)
         self.label_user_name.setFont(font1)
 
         self.horizontalLayout.addWidget(self.label_user_name)
 
-        self.label_title_id = QLabel(self.centralwidget)
-        self.label_title_id.setObjectName(u"label_title_id")
-        self.label_title_id.setFont(font1)
+        self.label_id_title = QLabel(self.centralwidget)
+        self.label_id_title.setObjectName(u"label_id_title")
+        self.label_id_title.setFont(font1)
 
-        self.horizontalLayout.addWidget(self.label_title_id)
+        self.horizontalLayout.addWidget(self.label_id_title)
 
 
         self.layout_left.addLayout(self.horizontalLayout)
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_3 = QSpacerItem(10, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_3)
 
@@ -178,14 +178,17 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(1)
         sizePolicy1.setHeightForWidth(self.button_show_sidebar.sizePolicy().hasHeightForWidth())
         self.button_show_sidebar.setSizePolicy(sizePolicy1)
-        self.button_show_sidebar.setMaximumSize(QSize(20, 80))
+        self.button_show_sidebar.setMaximumSize(QSize(10, 50))
+        font4 = QFont()
+        font4.setPointSize(5)
+        self.button_show_sidebar.setFont(font4)
         self.button_show_sidebar.setStyleSheet(u"background-color:rgb(25, 53, 83);\n"
 "color: rgb(255, 255, 255);")
         self.button_show_sidebar.setCheckable(True)
 
         self.verticalLayout_2.addWidget(self.button_show_sidebar)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_4 = QSpacerItem(10, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_2.addItem(self.verticalSpacer_4)
 
@@ -196,69 +199,125 @@ class Ui_MainWindow(object):
         self.layout_center.setObjectName(u"layout_center")
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.verticalLayout_3 = QVBoxLayout()
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.label_ai_service_title = QLabel(self.centralwidget)
+        self.label_ai_service_title.setObjectName(u"label_ai_service_title")
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+        self.verticalLayout_3.addWidget(self.label_ai_service_title)
+
+        self.horizontalLayout_4 = QHBoxLayout()
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.label_bullet_title = QLabel(self.centralwidget)
+        self.label_bullet_title.setObjectName(u"label_bullet_title")
+        self.label_bullet_title.setFont(font1)
+
+        self.horizontalLayout_4.addWidget(self.label_bullet_title)
+
+        self.label_status_text_title = QLabel(self.centralwidget)
+        self.label_status_text_title.setObjectName(u"label_status_text_title")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.label_status_text_title.sizePolicy().hasHeightForWidth())
+        self.label_status_text_title.setSizePolicy(sizePolicy2)
+        self.label_status_text_title.setMaximumSize(QSize(150, 150))
+
+        self.horizontalLayout_4.addWidget(self.label_status_text_title)
+
+        self.label_ai_service_status_light = QLabel(self.centralwidget)
+        self.label_ai_service_status_light.setObjectName(u"label_ai_service_status_light")
+        self.label_ai_service_status_light.setStyleSheet(u"color: rgb(0, 170, 0);")
+
+        self.horizontalLayout_4.addWidget(self.label_ai_service_status_light)
+
+        self.label_ai_service_stauts_text = QLabel(self.centralwidget)
+        self.label_ai_service_stauts_text.setObjectName(u"label_ai_service_stauts_text")
+
+        self.horizontalLayout_4.addWidget(self.label_ai_service_stauts_text)
+
+        self.horizontalLayout_4.setStretch(1, 1)
+        self.horizontalLayout_4.setStretch(3, 1)
+
+        self.verticalLayout_3.addLayout(self.horizontalLayout_4)
+
+
+        self.horizontalLayout_2.addLayout(self.verticalLayout_3)
 
         self.horizontalLayout_8 = QHBoxLayout()
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
         self.horizontalLayout_8.setContentsMargins(0, -1, -1, -1)
+        self.horizontalSpacer = QSpacerItem(140, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_8.addItem(self.horizontalSpacer)
+
         self.button_video_player_layout_1x1 = QPushButton(self.centralwidget)
         self.button_video_player_layout_1x1.setObjectName(u"button_video_player_layout_1x1")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.button_video_player_layout_1x1.sizePolicy().hasHeightForWidth())
-        self.button_video_player_layout_1x1.setSizePolicy(sizePolicy2)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.button_video_player_layout_1x1.sizePolicy().hasHeightForWidth())
+        self.button_video_player_layout_1x1.setSizePolicy(sizePolicy3)
         self.button_video_player_layout_1x1.setMinimumSize(QSize(75, 0))
 
         self.horizontalLayout_8.addWidget(self.button_video_player_layout_1x1)
 
         self.button_video_player_layout_2x2 = QPushButton(self.centralwidget)
         self.button_video_player_layout_2x2.setObjectName(u"button_video_player_layout_2x2")
-        sizePolicy2.setHeightForWidth(self.button_video_player_layout_2x2.sizePolicy().hasHeightForWidth())
-        self.button_video_player_layout_2x2.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_video_player_layout_2x2.sizePolicy().hasHeightForWidth())
+        self.button_video_player_layout_2x2.setSizePolicy(sizePolicy3)
         self.button_video_player_layout_2x2.setMinimumSize(QSize(75, 0))
 
         self.horizontalLayout_8.addWidget(self.button_video_player_layout_2x2)
 
         self.button_video_player_layout_3x3 = QPushButton(self.centralwidget)
         self.button_video_player_layout_3x3.setObjectName(u"button_video_player_layout_3x3")
-        sizePolicy2.setHeightForWidth(self.button_video_player_layout_3x3.sizePolicy().hasHeightForWidth())
-        self.button_video_player_layout_3x3.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_video_player_layout_3x3.sizePolicy().hasHeightForWidth())
+        self.button_video_player_layout_3x3.setSizePolicy(sizePolicy3)
         self.button_video_player_layout_3x3.setMinimumSize(QSize(75, 0))
 
         self.horizontalLayout_8.addWidget(self.button_video_player_layout_3x3)
 
         self.button_video_player_layout_4x4 = QPushButton(self.centralwidget)
         self.button_video_player_layout_4x4.setObjectName(u"button_video_player_layout_4x4")
-        sizePolicy2.setHeightForWidth(self.button_video_player_layout_4x4.sizePolicy().hasHeightForWidth())
-        self.button_video_player_layout_4x4.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_video_player_layout_4x4.sizePolicy().hasHeightForWidth())
+        self.button_video_player_layout_4x4.setSizePolicy(sizePolicy3)
         self.button_video_player_layout_4x4.setMinimumSize(QSize(75, 0))
 
         self.horizontalLayout_8.addWidget(self.button_video_player_layout_4x4)
 
         self.button_video_player_layout_5x5 = QPushButton(self.centralwidget)
         self.button_video_player_layout_5x5.setObjectName(u"button_video_player_layout_5x5")
-        sizePolicy2.setHeightForWidth(self.button_video_player_layout_5x5.sizePolicy().hasHeightForWidth())
-        self.button_video_player_layout_5x5.setSizePolicy(sizePolicy2)
+        sizePolicy3.setHeightForWidth(self.button_video_player_layout_5x5.sizePolicy().hasHeightForWidth())
+        self.button_video_player_layout_5x5.setSizePolicy(sizePolicy3)
         self.button_video_player_layout_5x5.setMinimumSize(QSize(75, 0))
 
         self.horizontalLayout_8.addWidget(self.button_video_player_layout_5x5)
 
+        self.button_video_player_layout_6x6 = QPushButton(self.centralwidget)
+        self.button_video_player_layout_6x6.setObjectName(u"button_video_player_layout_6x6")
 
-        self.horizontalLayout_2.addLayout(self.horizontalLayout_8)
+        self.horizontalLayout_8.addWidget(self.button_video_player_layout_6x6)
+
+        self.button_video_player_layout_7x7 = QPushButton(self.centralwidget)
+        self.button_video_player_layout_7x7.setObjectName(u"button_video_player_layout_7x7")
+
+        self.horizontalLayout_8.addWidget(self.button_video_player_layout_7x7)
+
+        self.button_video_player_layout_8x8 = QPushButton(self.centralwidget)
+        self.button_video_player_layout_8x8.setObjectName(u"button_video_player_layout_8x8")
+
+        self.horizontalLayout_8.addWidget(self.button_video_player_layout_8x8)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout_8.addItem(self.horizontalSpacer_2)
 
-        self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(0, -1, -1, -1)
 
-        self.horizontalLayout_2.addLayout(self.horizontalLayout_7)
+        self.horizontalLayout_2.addLayout(self.horizontalLayout_8)
 
+        self.horizontalLayout_2.setStretch(0, 1)
+        self.horizontalLayout_2.setStretch(1, 8)
 
         self.layout_center.addLayout(self.horizontalLayout_2)
 
@@ -266,6 +325,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.checkBox_activate_grid = QCheckBox(self.centralwidget)
         self.checkBox_activate_grid.setObjectName(u"checkBox_activate_grid")
+        font5 = QFont()
+        font5.setPointSize(13)
+        self.checkBox_activate_grid.setFont(font5)
 
         self.horizontalLayout_9.addWidget(self.checkBox_activate_grid)
 
@@ -273,20 +335,26 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9.addItem(self.horizontalSpacer_5)
 
-        self.button_modify_layout = QPushButton(self.centralwidget)
-        self.button_modify_layout.setObjectName(u"button_modify_layout")
-        self.button_modify_layout.setCheckable(True)
-
-        self.horizontalLayout_9.addWidget(self.button_modify_layout)
-
-        self.horizontalSpacer_4 = QSpacerItem(20, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_9.addItem(self.horizontalSpacer_4)
-
         self.button_delete_selected_layout = QPushButton(self.centralwidget)
         self.button_delete_selected_layout.setObjectName(u"button_delete_selected_layout")
 
         self.horizontalLayout_9.addWidget(self.button_delete_selected_layout)
+
+        self.button_modify_layout = QPushButton(self.centralwidget)
+        self.button_modify_layout.setObjectName(u"button_modify_layout")
+        self.button_modify_layout.setStyleSheet(u"QPushButton {\n"
+"    background-color:rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"}")
+        self.button_modify_layout.setCheckable(False)
+        self.button_modify_layout.setChecked(False)
+        self.button_modify_layout.setAutoRepeat(False)
+        self.button_modify_layout.setFlat(False)
+
+        self.horizontalLayout_9.addWidget(self.button_modify_layout)
 
 
         self.layout_center.addLayout(self.horizontalLayout_9)
@@ -299,7 +367,14 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.label_snapshot_image_widget = QLabel(self.tab)
         self.label_snapshot_image_widget.setObjectName(u"label_snapshot_image_widget")
-        self.label_snapshot_image_widget.setFont(font1)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label_snapshot_image_widget.sizePolicy().hasHeightForWidth())
+        self.label_snapshot_image_widget.setSizePolicy(sizePolicy4)
+        font6 = QFont()
+        font6.setPointSize(18)
+        self.label_snapshot_image_widget.setFont(font6)
         self.label_snapshot_image_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout.addWidget(self.label_snapshot_image_widget, 0, 0, 1, 1)
@@ -315,12 +390,16 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.label_ai_event_log)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(300, 10, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_3)
 
         self.button_show_event_log = QPushButton(self.centralwidget)
         self.button_show_event_log.setObjectName(u"button_show_event_log")
+        sizePolicy4.setHeightForWidth(self.button_show_event_log.sizePolicy().hasHeightForWidth())
+        self.button_show_event_log.setSizePolicy(sizePolicy4)
+        self.button_show_event_log.setMaximumSize(QSize(50, 10))
+        self.button_show_event_log.setFont(font4)
         self.button_show_event_log.setStyleSheet(u"background-color: rgb(25, 53, 83);\n"
 "\n"
 "color: rgb(255, 255, 255);")
@@ -329,10 +408,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.button_show_event_log)
 
-        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_6 = QSpacerItem(40, 10, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.horizontalLayout_3.addItem(self.horizontalSpacer_6)
 
+        self.horizontalLayout_3.setStretch(1, 1)
+        self.horizontalLayout_3.setStretch(2, 8)
+        self.horizontalLayout_3.setStretch(3, 1)
 
         self.layout_center.addLayout(self.horizontalLayout_3)
 
@@ -351,7 +433,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout = QVBoxLayout()
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer = QSpacerItem(10, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
@@ -359,14 +441,15 @@ class Ui_MainWindow(object):
         self.button_show_ai_event_image_log.setObjectName(u"button_show_ai_event_image_log")
         sizePolicy1.setHeightForWidth(self.button_show_ai_event_image_log.sizePolicy().hasHeightForWidth())
         self.button_show_ai_event_image_log.setSizePolicy(sizePolicy1)
-        self.button_show_ai_event_image_log.setMaximumSize(QSize(20, 80))
+        self.button_show_ai_event_image_log.setMaximumSize(QSize(10, 50))
+        self.button_show_ai_event_image_log.setFont(font4)
         self.button_show_ai_event_image_log.setStyleSheet(u"background-color:rgb(25, 53, 83);\n"
 "color: rgb(255, 255, 255);")
         self.button_show_ai_event_image_log.setCheckable(True)
 
         self.verticalLayout.addWidget(self.button_show_ai_event_image_log)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+        self.verticalSpacer_2 = QSpacerItem(10, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout.addItem(self.verticalSpacer_2)
 
@@ -396,8 +479,6 @@ class Ui_MainWindow(object):
         self.menu_setting.setObjectName(u"menu_setting")
         self.menu_management = QMenu(self.menubar)
         self.menu_management.setObjectName(u"menu_management")
-        self.menu_restart_stream = QMenu(self.menubar)
-        self.menu_restart_stream.setObjectName(u"menu_restart_stream")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -406,7 +487,6 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_program.menuAction())
         self.menubar.addAction(self.menu_setting.menuAction())
         self.menubar.addAction(self.menu_management.menuAction())
-        self.menubar.addAction(self.menu_restart_stream.menuAction())
         self.menu_program.addSeparator()
         self.menu_program.addAction(self.action_system_status)
         self.menu_program.addAction(self.action_event_logs)
@@ -419,6 +499,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
+        self.button_modify_layout.setDefault(False)
         self.tab_widget_video_player.setCurrentIndex(0)
 
 
@@ -437,7 +518,7 @@ class Ui_MainWindow(object):
         self.action_auto_delete_settings.setText(QCoreApplication.translate("MainWindow", u"\uc790\ub3d9 \uc815\ub9ac \uc124\uc815", None))
         self.label_logo.setText("")
         self.label_user_name.setText(QCoreApplication.translate("MainWindow", u"\u25b2  ID: ", None))
-        self.label_title_id.setText(QCoreApplication.translate("MainWindow", u"root", None))
+        self.label_id_title.setText(QCoreApplication.translate("MainWindow", u"root", None))
         self.label_clock_widget.setText(QCoreApplication.translate("MainWindow", u"\ud604\uc7ac \uc2dc\uac04 \uc704\uc82f", None))
         self.label_cctv_connection_status.setText(QCoreApplication.translate("MainWindow", u"\u25b2 CCTV \uc5f0\uacb0 \uc0c1\ud0dc", None))
         self.label_cctv_connection_status_widget.setText(QCoreApplication.translate("MainWindow", u"CCTV \uc5f0\uacb0 \uc0c1\ud0dc \uc704\uc82f", None))
@@ -447,14 +528,22 @@ class Ui_MainWindow(object):
         self.label_ptz_controller.setText(QCoreApplication.translate("MainWindow", u"\u25b2 PTZ \uc81c\uc5b4", None))
         self.label_ptz_controller_widget.setText(QCoreApplication.translate("MainWindow", u"PTZ \uc81c\uc5b4 \uc704\uc82f", None))
         self.button_show_sidebar.setText(QCoreApplication.translate("MainWindow", u"\u25c0", None))
+        self.label_ai_service_title.setText(QCoreApplication.translate("MainWindow", u"AI \uac10\uc9c0 \uc11c\ube44\uc2a4", None))
+        self.label_bullet_title.setText(QCoreApplication.translate("MainWindow", u"-", None))
+        self.label_status_text_title.setText(QCoreApplication.translate("MainWindow", u" \uc0c1\ud0dc", None))
+        self.label_ai_service_status_light.setText(QCoreApplication.translate("MainWindow", u"\u25cf", None))
+        self.label_ai_service_stauts_text.setText(QCoreApplication.translate("MainWindow", u"\uc2e4\ud589 \uc911", None))
         self.button_video_player_layout_1x1.setText(QCoreApplication.translate("MainWindow", u"1x1", None))
         self.button_video_player_layout_2x2.setText(QCoreApplication.translate("MainWindow", u"2x2", None))
         self.button_video_player_layout_3x3.setText(QCoreApplication.translate("MainWindow", u"3x3", None))
         self.button_video_player_layout_4x4.setText(QCoreApplication.translate("MainWindow", u"4x4", None))
         self.button_video_player_layout_5x5.setText(QCoreApplication.translate("MainWindow", u"5x5", None))
+        self.button_video_player_layout_6x6.setText(QCoreApplication.translate("MainWindow", u"6x6", None))
+        self.button_video_player_layout_7x7.setText(QCoreApplication.translate("MainWindow", u"7x7", None))
+        self.button_video_player_layout_8x8.setText(QCoreApplication.translate("MainWindow", u"8x8", None))
         self.checkBox_activate_grid.setText(QCoreApplication.translate("MainWindow", u"\uaca9\uc790 \ud45c\uc2dc", None))
-        self.button_modify_layout.setText(QCoreApplication.translate("MainWindow", u"\ud654\uba74 \ubc30\uce58 \ubcc0\uacbd", None))
         self.button_delete_selected_layout.setText(QCoreApplication.translate("MainWindow", u"\uc120\ud0dd \uadf8\ub9ac\ub4dc \uc0ad\uc81c", None))
+        self.button_modify_layout.setText(QCoreApplication.translate("MainWindow", u"\ud604\uc7ac \ub808\uc774\uc544\uc6c3 \uc218\uc815", None))
         self.label_snapshot_image_widget.setText(QCoreApplication.translate("MainWindow", u"snapshot \uc774\ubbf8\uc9c0 \uadf8\ub9ac\ub4dc", None))
         self.tab_widget_video_player.setTabText(self.tab_widget_video_player.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Snapshot", None))
         self.label_ai_event_log.setText(QCoreApplication.translate("MainWindow", u"\uc774\ubca4\ud2b8 \ub85c\uadf8 (\ucd5c\uadfc 100\uac74)", None))
@@ -465,6 +554,5 @@ class Ui_MainWindow(object):
         self.menu_program.setTitle(QCoreApplication.translate("MainWindow", u"\ud504\ub85c\uadf8\ub7a8", None))
         self.menu_setting.setTitle(QCoreApplication.translate("MainWindow", u"\uc124\uc815", None))
         self.menu_management.setTitle(QCoreApplication.translate("MainWindow", u"\uad00\ub9ac\uc790 \uba54\ub274", None))
-        self.menu_restart_stream.setTitle(QCoreApplication.translate("MainWindow", u"\uc2a4\ud2b8\ub9bc \uc7ac\uc2dc\uc791", None))
     # retranslateUi
 

@@ -88,7 +88,7 @@
            <widget class="QLabel" name="label_user_name">
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <pointsize>11</pointsize>
              </font>
             </property>
             <property name="text">
@@ -97,10 +97,10 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label_title_id">
+           <widget class="QLabel" name="label_id_title">
             <property name="font">
              <font>
-              <pointsize>18</pointsize>
+              <pointsize>11</pointsize>
              </font>
             </property>
             <property name="text">
@@ -286,7 +286,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
+            <width>10</width>
             <height>40</height>
            </size>
           </property>
@@ -302,9 +302,14 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>20</width>
-            <height>80</height>
+            <width>10</width>
+            <height>50</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>5</pointsize>
+           </font>
           </property>
           <property name="styleSheet">
            <string notr="true">background-color:rgb(25, 53, 83);
@@ -325,7 +330,7 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
+            <width>10</width>
             <height>40</height>
            </size>
           </property>
@@ -336,25 +341,91 @@ color: rgb(255, 255, 255);</string>
       <item>
        <layout class="QVBoxLayout" name="layout_center" stretch="0,0,4,0,0">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,8">
           <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_ai_service_title">
+              <property name="text">
+               <string>AI 감지 서비스</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,1,0,1">
+              <item>
+               <widget class="QLabel" name="label_bullet_title">
+                <property name="font">
+                 <font>
+                  <pointsize>11</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>-</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_status_text_title">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>150</width>
+                  <height>150</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string> 상태</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_ai_service_status_light">
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(0, 170, 0);</string>
+                </property>
+                <property name="text">
+                 <string>●</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_ai_service_stauts_text">
+                <property name="text">
+                 <string>실행 중</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <property name="leftMargin">
              <number>0</number>
             </property>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Policy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>140</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item>
              <widget class="QPushButton" name="button_video_player_layout_1x1">
               <property name="sizePolicy">
@@ -450,26 +521,40 @@ color: rgb(255, 255, 255);</string>
               </property>
              </widget>
             </item>
-           </layout>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_7">
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
+            <item>
+             <widget class="QPushButton" name="button_video_player_layout_6x6">
+              <property name="text">
+               <string>6x6</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_video_player_layout_7x7">
+              <property name="text">
+               <string>7x7</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="button_video_player_layout_8x8">
+              <property name="text">
+               <string>8x8</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Orientation::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
           </item>
          </layout>
@@ -478,6 +563,11 @@ color: rgb(255, 255, 255);</string>
          <layout class="QHBoxLayout" name="horizontalLayout_9">
           <item>
            <widget class="QCheckBox" name="checkBox_activate_grid">
+            <property name="font">
+             <font>
+              <pointsize>13</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>격자 표시</string>
             </property>
@@ -497,35 +587,40 @@ color: rgb(255, 255, 255);</string>
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="button_modify_layout">
+           <widget class="QPushButton" name="button_delete_selected_layout">
             <property name="text">
-             <string>화면 배치 변경</string>
-            </property>
-            <property name="checkable">
-             <bool>true</bool>
+             <string>선택 그리드 삭제</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_4">
-            <property name="orientation">
-             <enum>Qt::Orientation::Horizontal</enum>
+           <widget class="QPushButton" name="button_modify_layout">
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    background-color:rgb(255, 255, 255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(255, 255, 255);
+}</string>
             </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Policy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="button_delete_selected_layout">
             <property name="text">
-             <string>선택 그리드 삭제</string>
+             <string>현재 레이아웃 수정</string>
+            </property>
+            <property name="checkable">
+             <bool>false</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -543,6 +638,12 @@ color: rgb(255, 255, 255);</string>
            <layout class="QGridLayout" name="gridLayout">
             <item row="0" column="0">
              <widget class="QLabel" name="label_snapshot_image_widget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="font">
                <font>
                 <pointsize>18</pointsize>
@@ -561,7 +662,7 @@ color: rgb(255, 255, 255);</string>
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1,8,1">
           <item>
            <widget class="QLabel" name="label_ai_event_log">
             <property name="text">
@@ -574,16 +675,36 @@ color: rgb(255, 255, 255);</string>
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Fixed</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>300</width>
+              <height>10</height>
              </size>
             </property>
            </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="button_show_event_log">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>50</width>
+              <height>10</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>5</pointsize>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(25, 53, 83);
 
@@ -605,10 +726,13 @@ color: rgb(255, 255, 255);</string>
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Policy::Expanding</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>40</width>
-              <height>20</height>
+              <height>10</height>
              </size>
             </property>
            </spacer>
@@ -650,7 +774,7 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
+            <width>10</width>
             <height>40</height>
            </size>
           </property>
@@ -666,9 +790,14 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="maximumSize">
            <size>
-            <width>20</width>
-            <height>80</height>
+            <width>10</width>
+            <height>50</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>5</pointsize>
+           </font>
           </property>
           <property name="styleSheet">
            <string notr="true">background-color:rgb(25, 53, 83);
@@ -689,7 +818,7 @@ color: rgb(255, 255, 255);</string>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>20</width>
+            <width>10</width>
             <height>40</height>
            </size>
           </property>
@@ -752,15 +881,9 @@ color: rgb(255, 255, 255);</string>
     <addaction name="action_event_logic_management"/>
     <addaction name="action_ai_train_management"/>
    </widget>
-   <widget class="QMenu" name="menu_restart_stream">
-    <property name="title">
-     <string>스트림 재시작</string>
-    </property>
-   </widget>
    <addaction name="menu_program"/>
    <addaction name="menu_setting"/>
    <addaction name="menu_management"/>
-   <addaction name="menu_restart_stream"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_cctv_settings">

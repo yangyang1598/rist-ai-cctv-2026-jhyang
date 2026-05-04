@@ -56,7 +56,8 @@ class AiEventLogSearchDialog(QDialog, Ui_Dialog):
 
         # 이벤트 로그 선택 이미지
         self.ai_event_log_selected_image_widget = AiEventLogSelectedImageWidget()
-        self.layout_event_log.replaceWidget(self.label_ai_event_log_selected_image_widget, self.ai_event_log_selected_image_widget)
+        self.ai_event_log_selected_image_widget.setMaximumSize(713, 150) # 위젯의 최대 크기 제한
+        self.layout_event_log_list.replaceWidget(self.label_ai_event_log_selected_image_widget, self.ai_event_log_selected_image_widget)
         self.label_ai_event_log_selected_image_widget.deleteLater()
         self.ai_event_log_selected_image_widget.hide()
 
