@@ -298,6 +298,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.checkBox_activate_grid.setEnabled(not is_snapshot)
         self.button_modify_layout.setEnabled(not is_snapshot)
         self.set_button_video_player_by_tabname(tab_text)
+        self._set_layout_button_spacer(is_snapshot)
 
         # 이벤트 로그 위젯 토글
         self._toggle_event_widgets(is_snapshot)
@@ -305,6 +306,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # 사이드바
         self.button_show_sidebar.setChecked(is_snapshot)
         self.toggle_side_bar_widget(is_snapshot)
+
+    def _set_layout_button_spacer(self, is_snapshot: bool):
+        width = 400 if is_snapshot else 40
+        self.horizontalSpacer.changeSize(
+            width,
+            20,
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Minimum,
+        )
+        self.horizontalLayout_8.invalidate()
+        self.horizontalSpacer_3.changeSize(
+            width,
+            20,
+            QSizePolicy.Policy.Expanding,
+            QSizePolicy.Policy.Minimum,
+        )
+        self.horizontalLayout_3.invalidate()
 
     def _toggle_event_widgets(self, is_snapshot: bool):
         """이벤트 로그 위젯 표시/숨김"""
